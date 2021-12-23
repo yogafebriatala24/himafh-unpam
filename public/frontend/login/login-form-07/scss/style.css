@@ -1,26 +1,11 @@
 body {
-  font-family: "Roboto", sans-serif;
-  background-color: #f8fafb;
+  font-family: "Poppins", sans-serif;
+  background-color: #fcfcfc;
 }
 
 p {
   color: #b3b3b3;
   font-weight: 300;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.h1,
-.h2,
-.h3,
-.h4,
-.h5,
-.h6 {
-  font-family: "Roboto", sans-serif;
 }
 
 a {
@@ -37,25 +22,7 @@ a:hover {
 }
 
 h3 {
-  font-size: 10px;
-}
-
-@media (max-width: 991.98px) {
-  .content .bg {
-    height: 500px;
-  }
-}
-
-.content .contents,
-.content .bg {
-  width: 50%;
-}
-
-@media (max-width: 1199.98px) {
-  .content .contents,
-  .content .bg {
-    width: 100%;
-  }
+  font-size: 24px;
 }
 
 .content .contents .form-group,
@@ -67,16 +34,6 @@ h3 {
   position: relative;
   background: #edf2f5;
   border-bottom: 1px solid #e6edf1;
-}
-
-.content .contents .form-group label,
-.content .bg .form-group label {
-  position: absolute;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  -webkit-transition: 0.3s all ease;
-  transition: 0.3s all ease;
 }
 
 .content .contents .form-group input,
@@ -106,7 +63,7 @@ h3 {
 
 .content .contents .form-group.focus,
 .content .bg .form-group.focus {
-  background: #fff;
+  background: white;
 }
 
 .content .contents .form-group.field--not-empty label,
@@ -144,98 +101,12 @@ h3 {
   height: 54px;
   padding-left: 30px;
   padding-right: 30px;
+  background-color: #962e30;
+  color: white;
 }
 
-.content .forgot-pass {
-  position: relative;
-  top: 2px;
-  font-size: 14px;
-}
-
-.control {
-  display: block;
-  position: relative;
-  padding-left: 30px;
-  margin-bottom: 15px;
-  cursor: pointer;
-  font-size: 14px;
-}
-
-.control .caption {
-  position: relative;
-  top: 0.2rem;
-  color: #888;
-}
-
-.control input {
-  position: absolute;
-  z-index: -1;
-  opacity: 0;
-}
-
-.control__indicator {
-  position: absolute;
-  top: 2px;
-  left: 0;
-  height: 20px;
-  width: 20px;
-  background: #e6e6e6;
-  border-radius: 4px;
-}
-
-.control--radio .control__indicator {
-  border-radius: 50%;
-}
-
-.control:hover input ~ .control__indicator,
-.control input:focus ~ .control__indicator {
-  background: #ccc;
-}
-
-.control input:checked ~ .control__indicator {
-  background: #6c63ff;
-}
-
-.control:hover input:not([disabled]):checked ~ .control__indicator,
-.control input:checked:focus ~ .control__indicator {
-  background: #847dff;
-}
-
-.control input:disabled ~ .control__indicator {
-  background: #e6e6e6;
-  opacity: 0.9;
-  pointer-events: none;
-}
-
-.control__indicator:after {
-  font-family: "icomoon";
-  content: "\e5ca";
-  position: absolute;
-  display: none;
-  font-size: 16px;
-  -webkit-transition: 0.3s all ease;
-  transition: 0.3s all ease;
-}
-
-.control input:checked ~ .control__indicator:after {
-  display: block;
-  color: #fff;
-}
-
-.control--checkbox .control__indicator:after {
-  top: 50%;
-  left: 50%;
-  margin-top: -1px;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-}
-
-.control--checkbox input:disabled ~ .control__indicator:after {
-  border-color: #7b7b7b;
-}
-
-.control--checkbox input:disabled:checked ~ .control__indicator {
-  background-color: #7e0cf5;
-  opacity: 0.2;
+.content .btn:hover {
+  background-color: #b64d4f;
+  color: white;
 }
 /*# sourceMappingURL=style.css.map */
