@@ -6,12 +6,12 @@ p {
     color: darken(#ccc, 10%);
     font-weight: 300;
 }
-a {
-    transition: 0.3s all ease;
-    &:hover {
-        text-decoration: none !important;
-    }
-}
+// a {
+//     transition: 0.3s all ease;
+//     &:hover {
+//         text-decoration: none !important;
+//     }
+// }
 .content {
     padding: 7rem 0;
 }

@@ -8,15 +8,6 @@ p {
   font-weight: 300;
 }
 
-a {
-  -webkit-transition: 0.3s all ease;
-  transition: 0.3s all ease;
-}
-
-a:hover {
-  text-decoration: none !important;
-}
-
 .content {
   padding: 7rem 0;
 }
