@@ -4,9 +4,12 @@ namespace App\Http\Livewire\Admin;
 
 use App\Models\User;
 use Livewire\Component;
+use Jantinnerezo\LivewireAlert\LivewireAlert;
 
 class UserLiveWire extends Component
 {
+    use LivewireAlert;
+
     public $name, $email, $nim, $reg;
     public $limit = 10, $countUser, $maxLimit = false;
     public $keyword;
@@ -80,5 +83,11 @@ class UserLiveWire extends Component
         ]);
 
         $this->click = 0;
+
+        $this->alert('success', 'Perubahan di simpan', [
+            'position' => 'top',
+            'timer' => 3000,
+            'toast' => true,
+        ]);
     }
 }
