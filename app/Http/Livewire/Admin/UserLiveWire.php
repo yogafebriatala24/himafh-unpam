@@ -90,4 +90,34 @@ class UserLiveWire extends Component
             'toast' => true,
         ]);
     }
+
+    public function hapus($id)
+    {
+        $this->userId = $id;
+        $this->alert('warning', 'Yakin hapus data ?', [
+            'showConfirmButton' => true,
+            'confirmButtonText' => 'Yakin',
+            'onConfirmed' => 'confirmHapus',
+            'showCancelButton' => true,
+            'cancelButtonText' => 'Cancel',
+            'onCancel' => 'confirmCancel',
+            'timer' => null,
+            'position' => 'center',
+            'toast' => false,
+        ]);
+    }
+    protected $listeners = [
+        'confirmHapus',
+    ];
+
+    public function confirmHapus($data)
+    {
+        $user = User::find($this->userId);
+        $user->delete();
+        $this->alert('success', 'Berhasil hapus data', [
+            'position' => 'top',
+            'timer' => 3000,
+            'toast' => true,
+        ]);
+    }
 }

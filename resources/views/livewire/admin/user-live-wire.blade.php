@@ -65,6 +65,7 @@
                             <th scope="col">EMAIL</th>
                             <th scope="col">NIM</th>
                             <th scope="col">REGULER</th>
+                            <th scope="col">ACTION</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -76,19 +77,39 @@
                             @if ($userId === $item->id && $click >= 2)
                                 <tr>
                                     <th scope="row">{{ $i }}</th>
-                                    <td><input type="text" class="form-control form-control-sm" wire:keydown.enter="update" wire:model="name"></td>
-                                    <td><input type="text" class="form-control form-control-sm" wire:keydown.enter="update" wire:model="email"></td>
-                                    <td><input type="number" class="form-control form-control-sm" wire:keydown.enter="update" wire:model="nim"></td>
-                                    <td><input type="text" class="form-control form-control-sm" wire:keydown.enter="update" wire:model="reg"></td>
+                                    <td><input type="text" class="form-control form-control-sm"
+                                            wire:keydown.enter="update" wire:model="name"></td>
+                                    <td><input type="text" class="form-control form-control-sm"
+                                            wire:keydown.enter="update" wire:model="email"></td>
+                                    <td><input type="number" class="form-control form-control-sm"
+                                            wire:keydown.enter="update" wire:model="nim"></td>
+                                    <td><input type="text" class="form-control form-control-sm"
+                                            wire:keydown.enter="update" wire:model="reg"></td>
                                     <td wire:click="doubleClick({{ 0 }})" class="text-primary">Cancel</td>
                                 </tr>
+                                <tr>
+                                    <td colspan="5">
+                                        <span class="text-primary mt-2 d-flex justify-content-center">
+                                            <div class="spinner-border" role="status" wire:loading wire:target="update">
+                                                <span class="sr-only"></span>
+                                            </div>
+                                        </span>
+                                    </td>
+                                </tr>
                             @else
-                                <tr wire:click="doubleClick({{ $item->id }})">
-                                    <th scope="row">{{ $i }}</th>
-                                    <td>{{ $item->name }}</td>
-                                    <td>{{ $item->email }}</td>
-                                    <td>{{ $item->nim }}</td>
-                                    <td>{{ $item->reguler }}</td>
+                                <tr>
+                                    <th scope="row" wire:click="doubleClick({{ $item->id }})">{{ $i }}
+                                    </th>
+                                    <td wire:click="doubleClick({{ $item->id }})">{{ $item->name }}</td>
+                                    <td wire:click="doubleClick({{ $item->id }})">{{ $item->email }}</td>
+                                    <td wire:click="doubleClick({{ $item->id }})">{{ $item->nim }}</td>
+                                    <td wire:click="doubleClick({{ $item->id }})">{{ $item->reguler }}</td>
+                                    <td class="text-center">
+                                        <div class="text-danger btn btn-link" wire:click="hapus({{ $item->id }})">
+                                            <i class="bi bi-trash"></i>
+                                        </div>
+
+                                    </td>
                                 </tr>
                             @endif
 
