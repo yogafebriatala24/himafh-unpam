@@ -9,6 +9,7 @@
     <meta content="" name="description">
     <meta content="" name="keywords">
     @include('includes.admin.style')
+    @stack('style')
 </head>
 
 <body>

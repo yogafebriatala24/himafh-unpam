@@ -9,7 +9,7 @@ use Jantinnerezo\LivewireAlert\LivewireAlert;
 class RoomLiveWire extends Component
 {
     use LivewireAlert;
-    public $nama, $user_reguler, $status;
+    public $nama, $user_reguler, $status, $roomId;
     public $isCreate = false;
     public function render()
     {
@@ -49,7 +49,37 @@ class RoomLiveWire extends Component
         ]);
         $this->isCreate = false;
         $this->nama = '';
-        $this->alert('success', 'Perubahan di simpan', [
+        $this->alert('success', 'Berhasil membuat room', [
+            'position' => 'top',
+            'timer' => 3000,
+            'toast' => true,
+        ]);
+    }
+
+    public function hapus($id)
+    {
+        $this->roomId = $id;
+        $this->alert('warning', 'Yakin hapus data ?', [
+            'showConfirmButton' => true,
+            'confirmButtonText' => 'Yakin',
+            'onConfirmed' => 'confirmHapus',
+            'showCancelButton' => true,
+            'cancelButtonText' => 'Cancel',
+            'onCancel' => 'confirmCancel',
+            'timer' => null,
+            'position' => 'center',
+            'toast' => false,
+        ]);
+    }
+    protected $listeners = [
+        'confirmHapus',
+    ];
+
+    public function confirmHapus()
+    {
+        $room = Room::find($this->roomId);
+        $room->delete();
+        $this->alert('success', 'Berhasil hapus data', [
             'position' => 'top',
             'timer' => 3000,
             'toast' => true,
