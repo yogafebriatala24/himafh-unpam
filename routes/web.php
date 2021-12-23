@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Livewire\Admin\UserLiveWire;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,3 +25,6 @@ Route::get('/dashboard', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// admin
+Route::get('dashboard/users', UserLiveWire::class)->name('livewire-user')->middleware('auth');

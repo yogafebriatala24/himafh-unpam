@@ -9,7 +9,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="index.html">
+            <a class="nav-link" href="{{ route('livewire-user') }}">
                 <i class="bi bi-people"></i>
                 <span>User</span>
             </a>
