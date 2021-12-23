@@ -4,3 +4,4 @@
 
 <!-- Template Main JS File -->
 <script src="{{ asset('NiceAdmin/assets/js/main.js') }}"></script>
+@livewireScripts
