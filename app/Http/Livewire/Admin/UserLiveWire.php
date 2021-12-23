@@ -33,7 +33,6 @@ class UserLiveWire extends Component
             $this->maxLimit = true;
         } else {
             $users = User::orderBy('id', 'asc')->limit($this->limit)->get();
-            $this->maxLimit = false;
         }
 
         return view('livewire.admin.user-live-wire', [
