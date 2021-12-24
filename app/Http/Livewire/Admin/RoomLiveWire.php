@@ -85,4 +85,25 @@ class RoomLiveWire extends Component
             'toast' => true,
         ]);
     }
+    public function buka($id)
+    {
+        $room = Room::find($id);
+        if ($room->status === 'tutup') {
+            $room->status = 'buka';
+            $this->alert('success', 'Room berhasil di buka', [
+                'position' => 'top',
+                'timer' => 3000,
+                'toast' => true,
+            ]);
+        } else {
+            $room->status = 'tutup';
+            $this->alert('success', 'Room berhasil di tutup', [
+                'position' => 'top',
+                'timer' => 3000,
+                'toast' => true,
+            ]);
+        }
+
+        $room->save();
+    }
 }

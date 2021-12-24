@@ -1,6 +1,6 @@
 <div>
     @section('title')
-        Rooms Manajemen
+        Manajemen Rooms
     @endsection
 
     <div>
@@ -63,7 +63,11 @@
                             </div>
                         </div>
                         <div class="mt-2 d-flex justify-content-between">
-                            <div class="text-info fs-6 btn">Buka</div>
+                            @if ($item->status === 'tutup')
+                                <div class="text-info fs-6 btn" wire:click="buka({{ $item->id }})">Buka</div>
+                            @else
+                                <div class="text-info fs-6 btn" wire:click="buka({{ $item->id }})">Tutup</div>
+                            @endif
                             <div class="text-danger btn" wire:click="hapus({{ $item->id }})">Hapus</div>
                         </div>
                     </div>
