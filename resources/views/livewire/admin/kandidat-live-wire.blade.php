@@ -6,56 +6,26 @@
     <div class="btn btn-primary">
         Tambah Pasangan Calon
     </div>
-    <div class="row mt-4">
-        @forelse ($paslons as $item)
-            <div class="col-6">
+    <section class="section profile mt-4">
+        <div class="row">
+            <div class="col-xl-4">
+
                 <div class="card">
-                    <div class="card-body">
-                        <div class="my-2">
-                            <h5 class="text-center">Paslon {{ $item->nomor }}</h5>
-                        </div>
-                        <img src="" alt="">
-                        <div class="row">
-                            @foreach ($item->kandidat as $kandidat)
-                                <div class="col">
-                                    <img src="https://images.unsplash.com/photo-1639314014466-e7713a9eb75a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
-                                        alt="" class="img-fluid rounded mb-1">
-                                    <div class="" style="font-weight: 700">
-                                        {{ $kandidat->user->name }}
-                                    </div>
-                                    <div class="text-sm f6" style="font-size: 13px;">
-                                        Calon {{ $kandidat->role }}
-                                    </div>
-                                </div>
-                            @endforeach
-                        </div>
-                        <div class="mt-4">
-                            <div class="text-center" style="font-weight: 700">
-                                Visi
-                            </div>
-                            <div class="">
-                                {{ $item->visi }}
-                            </div>
-                        </div>
-                        <div class="mt-4">
-                            <div class="text-center" style="font-weight: 700">
-                                Misi
-                            </div>
-                            <div class="">
-                                {{ $item->misi }}
-                            </div>
-                        </div>
-                        <div class="mt-3">
-                            <div class="btn btn-danger btn-sm" wire:click="hapus({{ $item->id }})">
-                                Hapus
-                            </div>
+                    <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
+
+                        <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
+                        <h2>Kevin Anderson</h2>
+                        <h3>Web Designer</h3>
+                        <div class="social-links mt-2">
+                            <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+                            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+                            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+                            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
                         </div>
                     </div>
-
                 </div>
+
             </div>
-        @empty
-            <h2>Data Kosong</h2>
-        @endforelse
-    </div>
+        </div>
+    </section>
 </div>

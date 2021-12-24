@@ -22,12 +22,28 @@
                 <span>Room</span>
             </a>
         </li>
+
         <li class="nav-item">
-            <a class="nav-link  {{ request()->is('dashboard/kandidats') ? '' : 'collapsed' }}"
-                href="{{ route('livewire-kandidat') }}">
+            <a class="nav-link  {{ request()->is('dashboard/calons*') ? '' : 'collapsed' }}"
+                data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#" aria-expanded="false">
                 <i class="bi bi-person-square"></i>
                 <span>Kandidat</span>
+                <i class="bi bi-chevron-down ms-auto"></i>
             </a>
+            <ul id="forms-nav" class="nav-content collapse {{ request()->is('dashboard/calons*') ? 'show' : '' }}"
+                data-bs-parent="#sidebar-nav" style="">
+                <li>
+                    <a href="forms-elements.html">
+                        <i class="bi bi-circle"></i><span>Paslon</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('livewire-calon') }}"
+                        class="{{ request()->is('dashboard/calons*') ? 'active' : '' }}">
+                        <i class="bi bi-circle"></i><span>Calon</span>
+                    </a>
+                </li>
+            </ul>
         </li>
 
     </ul>

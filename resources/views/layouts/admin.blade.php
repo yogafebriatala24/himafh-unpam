@@ -10,6 +10,7 @@
     <meta content="" name="keywords">
     @include('includes.admin.style')
     @stack('style')
+
 </head>
 
 <body>
@@ -54,6 +55,8 @@
     <x-livewire-alert::scripts />
     <script src="{{ asset('vendor/livewire-alert/livewire-alert.js') }}"></script>
     <x-livewire-alert::flash />
+    @stack('script')
+
 
 </body>
 
