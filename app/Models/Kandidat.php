@@ -10,7 +10,7 @@ class Kandidat extends Model
     use HasFactory;
 
     protected $fillable = [
-        'user_id', 'nomor', 'role', 'image', 'paslon_id'
+        'user_id', 'role', 'image', 'paslon_id'
     ];
 
     public function user()
