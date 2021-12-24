@@ -117,14 +117,26 @@
                             @php
                                 $i++;
                             @endphp
+
                         @empty
 
                         @endforelse
-
                     </tbody>
                 </table>
                 <!-- End Default Table Example -->
+                <div class="">
+                    <div class="flex justify-content-center">
+                        <div class="" wire:loading wire:target="limitAdd">
+                            <span class="text-primary my-1 d-flex justify-content-center">
+                                <div class="spinner-border" role="status">
+                                    <span class="sr-only"></span>
+                                </div>
+                            </span>
+                        </div>
+                    </div>
+                </div>
                 @if (!$maxLimit)
+
                     <div class="d-flex justify-content-center">
                         <div class="btn btn-primary btn-sm" wire:click="limitAdd">Load More</div>
                     </div>

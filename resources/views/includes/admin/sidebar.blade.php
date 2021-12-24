@@ -22,6 +22,13 @@
                 <span>Room</span>
             </a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link  {{ request()->is('dashboard/kandidats') ? '' : 'collapsed' }}"
+                href="{{ route('livewire-kandidat') }}">
+                <i class="bi bi-person-square"></i>
+                <span>Kandidat</span>
+            </a>
+        </li>
 
     </ul>
 
