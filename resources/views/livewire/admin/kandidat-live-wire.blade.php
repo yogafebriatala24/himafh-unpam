@@ -11,6 +11,9 @@
             <div class="col-6">
                 <div class="card">
                     <div class="card-body">
+                        <div class="my-2">
+                            <h5 class="text-center">Paslon {{ $item->nomor }}</h5>
+                        </div>
                         <img src="" alt="">
                         <div class="row">
                             @foreach ($item->kandidat as $kandidat)
@@ -42,7 +45,13 @@
                                 {{ $item->misi }}
                             </div>
                         </div>
+                        <div class="mt-3">
+                            <div class="btn btn-danger btn-sm" wire:click="hapus({{ $item->id }})">
+                                Hapus
+                            </div>
+                        </div>
                     </div>
+
                 </div>
             </div>
         @empty
