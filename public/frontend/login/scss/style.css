@@ -21,11 +21,16 @@ img.tengah {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 100px;
 }
 
 h5 {
   font-weight: 400;
   font-size: 18px;
+}
+
+.content .contents {
+  margin-top: -100px;
 }
 
 .content .contents .form-group {
