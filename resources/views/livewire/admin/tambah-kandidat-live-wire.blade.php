@@ -18,6 +18,7 @@
         </div>
 
         <div class="col-6">
+
             <div>
                 {{-- <div>
                     @if ($image === null)
