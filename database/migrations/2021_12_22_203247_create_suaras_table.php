@@ -17,6 +17,7 @@ class CreateSuarasTable extends Migration
             $table->id();
             $table->integer('user_id');
             $table->integer('paslon_id');
+            $table->timestamps();
         });
     }
 

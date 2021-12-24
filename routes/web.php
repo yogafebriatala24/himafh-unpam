@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Livewire\Admin\KandidatLiveWire;
+use App\Http\Livewire\Admin\RoomLiveWire;
+use App\Http\Livewire\Admin\UserLiveWire;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,3 +27,8 @@ Route::get('/dashboard', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// admin
+Route::get('dashboard/users', UserLiveWire::class)->name('livewire-user')->middleware('auth');
+Route::get('dashboard/rooms', RoomLiveWire::class)->name('livewire-room')->middleware('auth');
+Route::get('dashboard/kandidats', KandidatLiveWire::class)->name('livewire-kandidat')->middleware('auth');

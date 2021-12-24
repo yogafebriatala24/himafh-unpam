@@ -16,6 +16,7 @@ class CreateKandidatsTable extends Migration
         Schema::create('kandidats', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
+            $table->integer('paslon_id')->nullable();
             $table->string('image');
             $table->string('role');
             $table->timestamps();
