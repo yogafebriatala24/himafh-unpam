@@ -16,9 +16,9 @@ class CreatePaslonsTable extends Migration
         Schema::create('paslons', function (Blueprint $table) {
             $table->id();
             $table->integer('nomor');
-            $table->integer('id_kandidat');
-            $table->string('visi');
-            $table->string('misi');
+            $table->longText('visi');
+            $table->longText('misi');
+            $table->timestamps();
         });
     }
 
