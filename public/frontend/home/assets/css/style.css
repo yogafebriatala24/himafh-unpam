@@ -627,6 +627,10 @@ section {
     position: relative;
     overflow: hidden;
 }
+.team .member .btn {
+    background-color: #962e30;
+    color: white;
+}
 .team .member .social {
     position: absolute;
     left: 0;
