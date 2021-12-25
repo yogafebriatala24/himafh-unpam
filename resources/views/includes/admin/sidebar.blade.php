@@ -12,7 +12,7 @@
             <a class="nav-link  {{ request()->is('dashboard/users') ? '' : 'collapsed' }}"
                 href="{{ route('livewire-user') }}">
                 <i class="bi bi-people"></i>
-                <span>User</span>
+                <span>DPT</span>
             </a>
         </li>
         <li class="nav-item">
