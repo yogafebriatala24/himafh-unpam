@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Livewire\Admin\CalonLiveWire;
 use App\Http\Livewire\Admin\KandidatLiveWire;
 use App\Http\Livewire\Admin\RoomLiveWire;
+use App\Http\Livewire\Admin\TambahKandidatLiveWire;
 use App\Http\Livewire\Admin\UserLiveWire;
 use Illuminate\Support\Facades\Route;
 
@@ -31,4 +33,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 // admin
 Route::get('dashboard/users', UserLiveWire::class)->name('livewire-user')->middleware('auth');
 Route::get('dashboard/rooms', RoomLiveWire::class)->name('livewire-room')->middleware('auth');
-Route::get('dashboard/kandidats', KandidatLiveWire::class)->name('livewire-kandidat')->middleware('auth');
+Route::get('dashboard/calons', CalonLiveWire::class)->name('livewire-calon')->middleware('auth');
+Route::get('dashboard/calons/tambah', TambahKandidatLiveWire::class)->name('livewire-calon-create')->middleware('auth');

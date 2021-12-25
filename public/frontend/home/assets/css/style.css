@@ -585,10 +585,10 @@ section {
     height: 12px;
     background-color: #fff;
     opacity: 1;
-    border: 1px solid #3498db;
+    border: 1px solid #962e30;
 }
 .testimonials .swiper-pagination .swiper-pagination-bullet-active {
-    background-color: #3498db;
+    background-color: #962e30;
 }
 @media (max-width: 767px) {
     .testimonials .testimonial-wrap {
@@ -696,7 +696,7 @@ section {
     border-bottom: 1px solid #eeeeee;
 }
 .faq .faq-item i {
-    color: #8bc4ea;
+    color: #962e30;
     font-size: 24px;
     float: left;
     line-height: 0;
@@ -739,7 +739,7 @@ section {
     font-size: 18px;
     display: inline-block;
     background: #fff;
-    color: #3498db;
+    color: #962e30;
     line-height: 1;
     padding: 8px 0;
     margin-right: 4px;
@@ -748,10 +748,10 @@ section {
     width: 36px;
     height: 36px;
     transition: 0.3s;
-    border: 1px solid #3498db;
+    border: 1px solid #962e30;
 }
 .contact .social-links a:hover {
-    background: #3498db;
+    background: #962e30;
     color: #fff;
 }
 .contact .info {
@@ -759,7 +759,7 @@ section {
 }
 .contact .info i {
     font-size: 32px;
-    color: #3498db;
+    color: #962e30;
     float: left;
     line-height: 1;
 }
@@ -817,10 +817,10 @@ section {
 }
 .contact .php-email-form input:focus,
 .contact .php-email-form textarea:focus {
-    border-color: #3498db;
+    border-color: #962e30;
 }
 .contact .php-email-form button[type="submit"] {
-    background: #3498db;
+    background: #962e30;
     border: 0;
     padding: 10px 24px;
     color: #fff;
@@ -828,7 +828,7 @@ section {
     border-radius: 50px;
 }
 .contact .php-email-form button[type="submit"]:hover {
-    background: #2383c4;
+    background: #962e30;
 }
 @-webkit-keyframes animate-loading {
     0% {
