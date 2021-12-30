@@ -18,6 +18,11 @@ body {
     color: #444444;
 }
 
+.btn-himafh {
+    color: white;
+    background-color: #962e30;
+}
+
 a {
     color: #962e30;
     text-decoration: none;
