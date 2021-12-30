@@ -2,18 +2,23 @@
 
 namespace App\Http\Livewire\Admin;
 
+use App\Imports\UsersImport;
 use App\Models\User;
 use Livewire\Component;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
+use Maatwebsite\Excel\Facades\Excel;
+use Livewire\WithFileUploads;
 
 class UserLiveWire extends Component
 {
     use LivewireAlert;
+    use WithFileUploads;
 
     public $name, $email, $nim, $reg;
     public $limit = 10, $countUser, $maxLimit = false;
     public $keyword;
     public $click, $userId = 0;
+    public $fileExcel;
 
     public function mount()
     {
@@ -118,5 +123,15 @@ class UserLiveWire extends Component
             'timer' => 3000,
             'toast' => true,
         ]);
+    }
+
+
+    public function hendleImportExcel()
+    {
+        $this->validate([
+            'fileExcel' => 'required|mimes:csv,xls,xlsx'
+        ]);
+
+        Excel::import(new UsersImport, $this->fileExcel);
     }
 }
