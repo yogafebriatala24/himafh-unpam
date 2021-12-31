@@ -8,17 +8,17 @@
         <div class="card">
             <div class="card-body">
                 <div class="row my-3">
-                    <div class="col-4">
+                    <div class="col-3">
                         <input type="text" class="form-control" placeholder="cari nama, nim, email"
-                            wire:model="keyword">
+                            wire:model.debounce.400ms="keyword">
                     </div>
-                    <div class="col d-flex justify-content-end">
+                    <div class="col-6 d-flex justify-content-end">
                         {{-- file excel input --}}
                         <div class="">
                             <div class="input-group">
-                                <label class="input-group-text" for="inputGroupFile02">Import Excel</label>
-                                <input type="file" class="form-control" wire:model="fileExcel" id="inputGroupFile02">
-                                <div class="btn btn-himafh" wire:click="hendleImportExcel" id="inputGroupFileAddon04">
+                                <input type="file" class="form-control" wire:model="fileExcel"
+                                    id="{{ $iteration }}">
+                                <div class="btn btn-himafh" wire:click="hendleImportExcel">
                                     Button</div>
                             </div>
                             <div>
@@ -26,6 +26,15 @@
                             </div>
                         </div>
 
+                        <div class="text-primary mt-2" wire:loading wire:target="hendleImportExcel">
+                            <div class="spinner-border" role="status">
+                                <span class="sr-only"></span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col">
+                        <div class="btn btn-himafh" wire:click="generatePassword">Isi Password kosong</div>
                     </div>
 
                     <!-- Modal -->
@@ -71,7 +80,7 @@
                         <tr class="fs-6">
                             <th scope="col">NO</th>
                             <th scope="col">NAMA</th>
-                            <th scope="col">EMAIL</th>
+                            <th scope="col">PASSWORD</th>
                             <th scope="col">NIM</th>
                             <th scope="col">REGULER</th>
                             <th scope="col">ACTION</th>
@@ -82,14 +91,14 @@
                             $i = 1;
                         @endphp
                         @forelse ($users as $item)
-
+                            {{-- untuk di edit --}}
                             @if ($userId === $item->id && $click >= 2)
                                 <tr>
                                     <th scope="row">{{ $i }}</th>
                                     <td><input type="text" class="form-control form-control-sm"
                                             wire:keydown.enter="update" wire:model="name"></td>
                                     <td><input type="text" class="form-control form-control-sm"
-                                            wire:keydown.enter="update" wire:model="email"></td>
+                                            wire:keydown.enter="update" wire:model="password"></td>
                                     <td><input type="number" class="form-control form-control-sm"
                                             wire:keydown.enter="update" wire:model="nim"></td>
                                     <td><input type="text" class="form-control form-control-sm"
@@ -110,14 +119,23 @@
                                     <th scope="row" wire:click="doubleClick({{ $item->id }})">{{ $i }}
                                     </th>
                                     <td wire:click="doubleClick({{ $item->id }})">{{ $item->name }}</td>
-                                    <td wire:click="doubleClick({{ $item->id }})">{{ $item->email }}</td>
+                                    @if ($item->passwordtwo !== null)
+                                        <td wire:click="doubleClick({{ $item->id }})">
+                                            {{ Illuminate\Support\Facades\Crypt::decryptString($item->passwordtwo) }}
+                                        </td>
+                                    @else
+                                        <td wire:click="doubleClick({{ $item->id }})">Password Kosong</td>
+                                    @endif
                                     <td wire:click="doubleClick({{ $item->id }})">{{ $item->nim }}</td>
                                     <td wire:click="doubleClick({{ $item->id }})">{{ $item->reguler }}</td>
-                                    <td class="text-center">
+                                    <td class="">
+                                        <a href="https://wa.me/62{{ $item->no_tlp }}/?text=Hallo {{ $item->name }}, kami dari tim KPU Hima FH. %0a %0aPassword pemira anda : *{{ Illuminate\Support\Facades\Crypt::decryptString($item->passwordtwo) }}* %0a %0aJangan sebarkan password ini kepada siapapun! %0a %0alogin di: https://himafhunpam.com/login"
+                                            class="btn btn-link text-success">
+                                            <i class="bi bi-whatsapp"></i>
+                                        </a>
                                         <div class="text-danger btn btn-link" wire:click="hapus({{ $item->id }})">
                                             <i class="bi bi-trash"></i>
                                         </div>
-
                                     </td>
                                 </tr>
                             @endif
