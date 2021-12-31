@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Admin;
 
 use App\Imports\UsersImport;
+use App\Models\Room;
 use App\Models\User;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\DB;
@@ -38,7 +39,7 @@ class UserLiveWire extends Component
         if (strlen($this->keyword) >= 2) {
             $users = User::where('name', 'LIKE', "%" . $this->keyword . "%")
                 ->orWhere('email', 'LIKE', "%" . $this->keyword . "%")
-                ->orWhere('nim', 'LIKE', "%" . $this->keyword . "%")->get();
+                ->orWhere('username', 'LIKE', "%" . $this->keyword . "%")->get();
             $this->maxLimit = true;
         } else {
             $users = User::orderBy('id', 'asc')->limit($this->limit)->get();
@@ -73,7 +74,7 @@ class UserLiveWire extends Component
             $user = User::find($id);
             $this->name = $user->name;
             $this->email = $user->email;
-            $this->nim = $user->nim;
+            $this->nim = $user->username;
             $this->reg = $user->reguler;
             $this->password = Crypt::decryptString($user->passwordtwo);
         } else {

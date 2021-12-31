@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\Front\ProfileKandidatController;
 use App\Http\Livewire\Admin\CalonLiveWire;
+use App\Http\Livewire\Admin\DptController;
+use App\Http\Livewire\Admin\KandidatLiveWire;
 use App\Http\Livewire\Admin\RoomLiveWire;
 use App\Http\Livewire\Admin\TambahKandidatLiveWire;
 use App\Http\Livewire\Admin\UserLiveWire;
@@ -21,11 +23,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('show', function () {
-//     $user = User::find(1);
-
-//     dd(Crypt::decryptString($user->passwordtwo));
-// });
+Route::get('show', function () {
+    $user = User::get();
+    return response()->json([$user]);
+});
 
 Route::get('/', function () {
     return view('welcome');
@@ -44,6 +45,7 @@ Route::get('dashboard/users', UserLiveWire::class)->name('livewire-user')->middl
 Route::get('dashboard/rooms', RoomLiveWire::class)->name('livewire-room')->middleware('auth');
 Route::get('dashboard/calons', CalonLiveWire::class)->name('livewire-calon')->middleware('auth');
 Route::get('dashboard/calons/tambah', TambahKandidatLiveWire::class)->name('livewire-calon-create')->middleware('auth');
+Route::get('dashboard/dpt', DptController::class)->name('dpt-livewire');
 
 // front
 Route::get('profile-kandidat', [ProfileKandidatController::class, 'index']);

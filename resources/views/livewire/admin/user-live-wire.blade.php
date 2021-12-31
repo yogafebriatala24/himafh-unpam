@@ -116,17 +116,31 @@
                                 </tr>
                             @else
                                 <tr>
+                                    <td wire:click="doubleClick({{ $item->id }})">{{ $i }}
+                                    </td>
+                                    <td wire:click="doubleClick({{ $item->id }})">{{ $item->name }}
+                                    </td>
+                                    <td wire:click="doubleClick({{ $item->id }})">
+                                        {{ $item->password_c }}</td>
+                                    <td wire:click="doubleClick({{ $item->id }})">
+                                        {{ $item->username }}</td>
+                                    <td wire:click="doubleClick({{ $item->id }})">
+                                        {{ $item->reguler }}</td>
+                                    <td class="">
+                                        <a href="https://wa.me/62{{ $item->no_tlp }}/?text=Hallo {{ $item->name }}, kami dari tim KPU Hima FH. %0a %0aPassword pemira anda : *{{ $item->password_c }}* %0a %0aJangan sebarkan password ini kepada siapapun!"
+                                            class="btn btn-link text-success">
+                                            <i class="bi bi-whatsapp"></i>
+                                        </a>
+                                        <div class="text-danger btn btn-link" wire:click="hapus({{ $item->id }})">
+                                            <i class="bi bi-trash"></i>
+                                        </div>
+                                    </td>
+                                </tr>
+                                {{-- <tr>
                                     <th scope="row" wire:click="doubleClick({{ $item->id }})">{{ $i }}
                                     </th>
                                     <td wire:click="doubleClick({{ $item->id }})">{{ $item->name }}</td>
-                                    @if ($item->passwordtwo !== null)
-                                        <td wire:click="doubleClick({{ $item->id }})">
-                                            {{ Illuminate\Support\Facades\Crypt::decryptString($item->passwordtwo) }}
-                                        </td>
-                                    @else
-                                        <td wire:click="doubleClick({{ $item->id }})">Password Kosong</td>
-                                    @endif
-                                    <td wire:click="doubleClick({{ $item->id }})">{{ $item->nim }}</td>
+
                                     <td wire:click="doubleClick({{ $item->id }})">{{ $item->reguler }}</td>
                                     <td class="">
                                         <a href="https://wa.me/62{{ $item->no_tlp }}/?text=Hallo {{ $item->name }}, kami dari tim KPU Hima FH. %0a %0aPassword pemira anda : *{{ Illuminate\Support\Facades\Crypt::decryptString($item->passwordtwo) }}* %0a %0aJangan sebarkan password ini kepada siapapun! %0a %0alogin di: https://himafhunpam.com/login"
@@ -137,7 +151,7 @@
                                             <i class="bi bi-trash"></i>
                                         </div>
                                     </td>
-                                </tr>
+                                </tr> --}}
                             @endif
 
 
