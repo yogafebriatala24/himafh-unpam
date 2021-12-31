@@ -33,13 +33,13 @@
                         </div>
                     </div>
                     <div class="mt-2">
-                        <div class="btn btn-primary" wire:click="tambah">Buat Room</div>
+                        <div class="btn btn-himafh" wire:click="tambah">Buat Room</div>
                         <div class="btn btn-outline-primary" wire:click="confirmCreate">Cancel</div>
                     </div>
                 </div>
             </div>
         @else
-            <button type="button" class="btn btn-primary mb-4" wire:click="confirmCreate">
+            <button type="button" class="btn btn-himafh mb-4" wire:click="confirmCreate">
                 Tambah data
             </button>
         @endif

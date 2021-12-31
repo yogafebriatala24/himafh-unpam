@@ -22,7 +22,7 @@ class User extends Authenticatable
         'email',
         'password',
         'nim', 'no_tlp',
-        'kelas', 'reguler', 'roles'
+        'kelas', 'reguler', 'roles', 'passwordtwo'
     ];
 
     /**
@@ -33,6 +33,7 @@ class User extends Authenticatable
     protected $hidden = [
         'password',
         'remember_token',
+        'passwordtwo'
     ];
 
     /**

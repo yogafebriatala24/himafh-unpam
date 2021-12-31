@@ -4,21 +4,25 @@ namespace App\Http\Livewire\Admin;
 
 use App\Imports\UsersImport;
 use App\Models\User;
+use Illuminate\Support\Facades\Crypt;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 use Livewire\Component;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Maatwebsite\Excel\Facades\Excel;
 use Livewire\WithFileUploads;
+use Illuminate\Support\Str;
 
 class UserLiveWire extends Component
 {
     use LivewireAlert;
     use WithFileUploads;
 
-    public $name, $email, $nim, $reg;
+    public $name, $email, $nim, $reg, $password;
     public $limit = 10, $countUser, $maxLimit = false;
     public $keyword;
     public $click, $userId = 0;
-    public $fileExcel;
+    public $fileExcel, $iteration;
 
     public function mount()
     {
@@ -31,13 +35,14 @@ class UserLiveWire extends Component
     public function render()
     {
 
-        if ($this->keyword !== null) {
+        if (strlen($this->keyword) >= 2) {
             $users = User::where('name', 'LIKE', "%" . $this->keyword . "%")
                 ->orWhere('email', 'LIKE', "%" . $this->keyword . "%")
                 ->orWhere('nim', 'LIKE', "%" . $this->keyword . "%")->get();
             $this->maxLimit = true;
         } else {
             $users = User::orderBy('id', 'asc')->limit($this->limit)->get();
+            $this->maxLimit = false;
         }
 
         return view('livewire.admin.user-live-wire', [
@@ -70,6 +75,7 @@ class UserLiveWire extends Component
             $this->email = $user->email;
             $this->nim = $user->nim;
             $this->reg = $user->reguler;
+            $this->password = Crypt::decryptString($user->passwordtwo);
         } else {
             $this->click = 0;
         }
@@ -81,9 +87,10 @@ class UserLiveWire extends Component
 
         $user->update([
             'name' => $this->name,
-            'email' => $this->email,
             'nim' => $this->nim,
             'reguler' => $this->reg,
+            'password' => Hash::make($this->password),
+            'passwordtwo' => Crypt::encryptString($this->password)
         ]);
 
         $this->click = 0;
@@ -133,5 +140,39 @@ class UserLiveWire extends Component
         ]);
 
         Excel::import(new UsersImport, $this->fileExcel);
+        $this->fileExcel = null;
+        $this->iteration++;
+        $this->alert('success', 'Berhasil import excel ke database', [
+            'position' => 'top',
+            'timer' => 4000,
+            'toast' => true,
+        ]);
+    }
+
+    public function generatePassword()
+    {
+
+        $user = User::where('password', null)->get();
+        if ($user->count() !== 0) {
+            foreach ($user as $s) {
+                $random = Str::random(8);
+                $s->update([
+                    'password' => Hash::make($random),
+                    'passwordtwo' => Crypt::encryptString($random)
+                ]);
+            }
+
+            $this->alert('success', 'Berhasil generate password baru', [
+                'position' => 'top',
+                'timer' => 4000,
+                'toast' => true,
+            ]);
+        } else {
+            $this->alert('warning', 'Tidak ada password kosong', [
+                'position' => 'top',
+                'timer' => 4000,
+                'toast' => true,
+            ]);
+        }
     }
 }

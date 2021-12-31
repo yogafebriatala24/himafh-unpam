@@ -1,10 +1,12 @@
 <?php
 
 use App\Http\Livewire\Admin\CalonLiveWire;
-use App\Http\Livewire\Admin\KandidatLiveWire;
 use App\Http\Livewire\Admin\RoomLiveWire;
 use App\Http\Livewire\Admin\TambahKandidatLiveWire;
 use App\Http\Livewire\Admin\UserLiveWire;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,6 +19,12 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+// Route::get('show', function () {
+//     $user = User::find(1);
+
+//     dd(Crypt::decryptString($user->passwordtwo));
+// });
 
 Route::get('/', function () {
     return view('welcome');

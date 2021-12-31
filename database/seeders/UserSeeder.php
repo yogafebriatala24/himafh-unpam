@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 use Faker\Factory as Faker;
+use Illuminate\Support\Facades\Crypt;
 
 class UserSeeder extends Seeder
 {
@@ -26,6 +27,7 @@ class UserSeeder extends Seeder
             'name' => 'Admin Hima FH',
             'email' => 'email@istimewah.com',
             'password' => Hash::make('admin2022'),
+            'passwordtwo' => Crypt::encryptString('admin2022'),
             'nim' => 1,
             'no_tlp' => '001',
             'kelas' => '001',
@@ -37,6 +39,7 @@ class UserSeeder extends Seeder
                 'name' => $faker->name,
                 'email' => $faker->email,
                 'password' => Hash::make('admin2022'),
+                'passwordtwo' => Crypt::encryptString('admin2022'),
                 'nim' => rand(10000000, 100000000),
                 'no_tlp' => $faker->phoneNumber,
                 'kelas' => 'TPLA' . $i,
@@ -48,6 +51,7 @@ class UserSeeder extends Seeder
                 'name' => $faker->name,
                 'email' => $faker->email,
                 'password' => Hash::make('admin2022'),
+                'passwordtwo' => Crypt::encryptString('admin2022'),
                 'nim' =>
                 rand(10000000, 100000000),
                 'no_tlp' => $faker->phoneNumber,
@@ -60,6 +64,7 @@ class UserSeeder extends Seeder
                 'name' => $faker->name,
                 'email' => $faker->email,
                 'password' => Hash::make('admin2022'),
+                'passwordtwo' => Crypt::encryptString('admin2022'),
                 'nim' =>
                 rand(10000000, 100000000),
                 'no_tlp' => $faker->phoneNumber,
