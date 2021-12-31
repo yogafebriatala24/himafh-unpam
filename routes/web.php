@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Front\ProfileKandidatController;
 use App\Http\Livewire\Admin\CalonLiveWire;
 use App\Http\Livewire\Admin\RoomLiveWire;
 use App\Http\Livewire\Admin\TambahKandidatLiveWire;
@@ -43,3 +44,6 @@ Route::get('dashboard/users', UserLiveWire::class)->name('livewire-user')->middl
 Route::get('dashboard/rooms', RoomLiveWire::class)->name('livewire-room')->middleware('auth');
 Route::get('dashboard/calons', CalonLiveWire::class)->name('livewire-calon')->middleware('auth');
 Route::get('dashboard/calons/tambah', TambahKandidatLiveWire::class)->name('livewire-calon-create')->middleware('auth');
+
+// front
+Route::get('profile-kandidat', [ProfileKandidatController::class, 'index']);
