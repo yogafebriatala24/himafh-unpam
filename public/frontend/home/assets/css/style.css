@@ -370,7 +370,7 @@ h6 {
         text-align: center;
     }
     #hero .hero-img img {
-        width: 50%;
+        width: 100%;
     }
 }
 @media (max-width: 768px) {
@@ -422,7 +422,7 @@ section {
 }
 
 .section-bg {
-    background-color: #f7fbfe;
+    background-color: #fff9f9;
 }
 
 .section-title {
