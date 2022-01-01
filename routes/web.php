@@ -48,3 +48,8 @@ Route::get('dashboard/calons/tambah', TambahKandidatLiveWire::class)->name('live
 // front
 Route::get('profile-kandidat', [ProfileKandidatController::class, 'index'])->name('profile');
 Route::get('/', [DepanController::class, 'index'])->name('depan');
+
+Route::get('logout', function (){
+    Auth::logout();
+    return redirect('/');
+})->name('logout');

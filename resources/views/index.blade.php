@@ -164,10 +164,10 @@
                         <div class="swiper-slide">
                             <div class="testimonial-wrap">
                                 <div class="testimonial-item">
-                                    <img src="{{ asset('frontend/home/assets/img/testimonials/testimonials-1.jpg') }}"
+                                    <img src="{{ asset('frontend/home/assets/img/quotes/gusdur.jpg') }}"
                                         class="testimonial-img" alt="" />
-                                    <h2>Saul Goodman</h2>
-                                    <h4>Ceo &amp; Founder</h4>
+                                    <h2>Abdurahman Wahid</h2>
+                                    <h4>Presiden Indonesia &amp; Ke-4</h4>
                                     <p>
                                         <i
                                             class="
@@ -175,12 +175,7 @@
                                                     bxs-quote-alt-left
                                                     quote-icon-left
                                                 "></i>
-                                        Proin iaculis purus consequat sem
-                                        cure digni ssim donec porttitora
-                                        entum suscipit rhoncus. Accusantium
-                                        quam, ultricies eget id, aliquam
-                                        eget nibh et. Maecen aliquam, risus
-                                        at semper.
+                                                Demokrasi harus berlandaskan kedaulatan hukum dan persamaan setiap warga negara tenpa mebedakan latar belakang ras, suku agama dan asal muasal, di muka-undang-undang.
                                         <i
                                             class="
                                                     bx
