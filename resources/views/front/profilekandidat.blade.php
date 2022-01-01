@@ -9,7 +9,6 @@
     <meta content="" name="description" />
     <meta content="" name="keywords" />
 
-    <link href="{{ asset('NiceAdmin/assets/img/favicon.png') }}" rel="icon" />
     @include('includes.front.style')
 </head>
 
