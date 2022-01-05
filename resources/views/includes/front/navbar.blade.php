@@ -17,16 +17,10 @@
                     <a class="nav-link scrollto active" href="{{ route('depan') }}">Home</a>
                 </li>
                 <li>
-                    <a class="nav-link scrollto" href="#services">Kandidat</a>
+                    <a class="nav-link scrollto" href="#calon">Kandidat</a>
                 </li>
                 <li>
-                    <a class="nav-link scrollto" href="#portfolio">Quick Count</a>
-                </li>
-                <li>
-                    <a class="nav-link scrollto" href="#team">Tulisan</a>
-                </li>
-                <li>
-                    <a class="nav-link scrollto" href="#pricing">Tentang Kami</a>
+                    <a class="nav-link scrollto" href="#kontak">Tentang Kami</a>
                 </li>
 @guest
 <li>
