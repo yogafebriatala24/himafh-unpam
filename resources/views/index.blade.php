@@ -8,16 +8,11 @@
     <title>Hima FH Unpam</title>
     <meta content="" name="description" />
     <meta content="" name="keywords" />
-
+    {{-- Styling --}}
     @include('includes.front.style')
 </head>
-
 <body>
-    <!-- ======= Header ======= -->
     @include('includes.front.navbar')
-    <!-- End Header -->
-
-    <!-- ======= Hero Section ======= -->
     <section id="hero" class="d-flex align-items-center">
         <div class="container">
             <div class="row">
@@ -39,7 +34,7 @@
                         Fakultas Hukum Universitas Pamulang.
                     </h2>
                     <div data-aos="fade-up" data-aos-delay="800">
-                        <a href="#team" class="btn-get-started scrollto">Lihat Kandidat</a>
+                        <a href="#calon" class="btn-get-started scrollto">Lihat Kandidat</a>
                     </div>
                 </div>
                 <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="fade-left" data-aos-delay="200">
@@ -48,11 +43,10 @@
             </div>
         </div>
     </section>
-    <!-- End Hero -->
-
+        {{-- Konten --}}
     <main id="main">
-        <!-- ======= Team Section ======= -->
-        <section id="team" class="team section-bg">
+        {{-- Calon --}}
+        <section id="calon" class="team section-bg">
             <div class="container">
                 <div class="section-title" data-aos="fade-up">
                     <h2>Kandidat</h2>
@@ -60,103 +54,60 @@
                 </div>
 
                 <div class="row justify-content-center">
-                    <div class="col-6 col-lg-2 d-flex align-items-stretch">
+                    <div class="col-9 col-lg-4 d-flex align-items-stretch">
                         <div class="member" data-aos="fade-up" data-aos-delay="100">
                             <div class="member-img">
                                 <img src="{{ asset('frontend/home/assets/img/team/team-1.jpg') }}"
                                     class="img-fluid" alt="" />
-
-                                <a href="{{ route('profile') }}" class="btn mt-1 py-2">Profil Kandidat</a>
+                                    <div class="d-grid">
+                                        <a href="{{ route('profile') }}" class="btn mx-4 mt-1 py-2">Profil Kandidat</a>
+                                    </div>
                             </div>
                             <div class="member-info">
-                                <h4>Walter }White</h4>
+                                <h4>Walter White</h4>
+                                <span>Calon Ketua Umum <br>
+                                    Paslon 1</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-9 col-lg-4 d-flex align-items-stretch">
+                        <div class="member" data-aos="fade-up" data-aos-delay="100">
+                            <div class="member-img">
+                                <img src="{{ asset('frontend/home/assets/img/team/team-1.jpg') }}"
+                                    class="img-fluid" alt="" />
+                                    <div class="d-grid">
+                                        <a href="{{ route('profile') }}" class="btn mx-4 mt-1 py-2">Profil Kandidat</a>
+                                    </div>
+                            </div>
+                            <div class="member-info">
+                                <h4>Walter White</h4>
+                                <span>Calon Ketua Umum <br>
+                                    Paslon 1</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-9 col-lg-4 d-flex align-items-stretch">
+                        <div class="member" data-aos="fade-up" data-aos-delay="100">
+                            <div class="member-img">
+                                <img src="{{ asset('frontend/home/assets/img/team/team-1.jpg') }}"
+                                    class="img-fluid" alt="" />
+                                    <div class="d-grid">
+                                        <a href="{{ route('profile') }}" class="btn mx-4 mt-1 py-2">Profil Kandidat</a>
+                                    </div>
+                            </div>
+                            <div class="member-info">
+                                <h4>Walter White</h4>
                                 <span>Calon Ketua Umum <br>
                                     Paslon 1</span>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-6 col-lg-2 d-flex align-items-stretch">
-                        <div class="member" data-aos="fade-up" data-aos-delay="100">
-                            <div class="member-img">
-                                <img src="{{ asset('frontend/home/assets/img/team/team-1.jpg') }}"
-                                    class="img-fluid" alt="" />
-
-                                <a href="profile.html" class="btn mt-1 py-2">Profil Kandidat</a>
-                            </div>
-                            <div class="member-info">
-                                <h4>Walter White</h4>
-                                <span>Calon Wakil Ketua Umum <br>
-                                    Paslon 1</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6 col-lg-2 d-flex align-items-stretch">
-                        <div class="member" data-aos="fade-up" data-aos-delay="100">
-                            <div class="member-img">
-                                <img src="{{ asset('frontend/home/assets/img/team/team-1.jpg') }}"
-                                    class="img-fluid" alt="" />
-
-                                <a href="profile.html" class="btn mt-1 py-2">Profil Kandidat</a>
-                            </div>
-                            <div class="member-info">
-                                <h4>Walter White</h4>
-                                <span>Calon Ketua Umum <br>
-                                    Paslon 2</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6 col-lg-2 d-flex align-items-stretch">
-                        <div class="member" data-aos="fade-up" data-aos-delay="100">
-                            <div class="member-img">
-                                <img src="{{ asset('frontend/home/assets/img/team/team-1.jpg') }}"
-                                    class="img-fluid" alt="" />
-
-                                <a href="profile.html" class="btn mt-1 py-2">Profil Kandidat</a>
-                            </div>
-                            <div class="member-info">
-                                <h4>Walter White</h4>
-                                <span>Calon Wakil Ketua Umum <br>
-                                    Paslon 2</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6 col-lg-2 d-flex align-items-stretch">
-                        <div class="member" data-aos="fade-up" data-aos-delay="100">
-                            <div class="member-img">
-                                <img src="{{ asset('frontend/home/assets/img/team/team-1.jpg') }}"
-                                    class="img-fluid" alt="" />
-
-                                <a href="profile.html" class="btn mt-1 py-2">Profil Kandidat</a>
-                            </div>
-                            <div class="member-info">
-                                <h4>Walter White</h4>
-                                <span>Calon Wakil Ketua Umum <br>
-                                    Paslon 2</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-6 col-lg-2 d-flex align-items-stretch">
-                        <div class="member" data-aos="fade-up" data-aos-delay="100">
-                            <div class="member-img">
-                                <img src="{{ asset('frontend/home/assets/img/team/team-1.jpg') }}"
-                                    class="img-fluid" alt="" />
-
-                                <a href="profile.html" class="btn mt-1 py-2">Profil Kandidat</a>
-                            </div>
-                            <div class="member-info">
-                                <h4>Walter White</h4>
-                                <span>Calon Wakil Ketua Umum <br>
-                                    Paslon 2</span>
-                            </div>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
         </section>
-        <!-- End Team Section -->
-
-        <!-- ======= Testimonials Section ======= -->
+        {{-- Quotes --}}
         <section id="testimonials" class="testimonials section-bg">
             <div class="container">
                 <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
@@ -166,8 +117,8 @@
                                 <div class="testimonial-item">
                                     <img src="{{ asset('frontend/home/assets/img/quotes/gusdur.jpg') }}"
                                         class="testimonial-img" alt="" />
-                                    <h2>Abdurahman Wahid</h2>
-                                    <h4>Presiden Indonesia &amp; Ke-4</h4>
+                                    <h3>Abdurahman Wahid</h3>
+                                    <h4>Presiden Indonesia ke-4</h4>
                                     <p>
                                         <i
                                             class="
@@ -186,15 +137,14 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- End testimonial item -->
 
                         <div class="swiper-slide">
                             <div class="testimonial-wrap">
                                 <div class="testimonial-item">
-                                    <img src="{{ asset('frontend/home/assets/img/testimonials/testimonials-2.jpg') }}"
+                                    <img src="{{ asset('frontend/home/assets/img/quotes/artidjo.jpg') }}"
                                         class="testimonial-img" alt="" />
-                                    <h3>Sara Wilsson</h3>
-                                    <h4>Designer</h4>
+                                    <h3>Artidjo Alkostar</h3>
+                                    <h4>Hakim Agung</h4>
                                     <p>
                                         <i
                                             class="
@@ -202,12 +152,7 @@
                                                     bxs-quote-alt-left
                                                     quote-icon-left
                                                 "></i>
-                                        Export tempor illum tamen malis
-                                        malis eram quae irure esse labore
-                                        quem cillum quid cillum eram malis
-                                        quorum velit fore eram velit sunt
-                                        aliqua noster fugiat irure amet
-                                        legam anim culpa.
+                                        Negara kita jangan kumuh dengan korupsi. Apapun yang dapat kita perbuat, ya kita perbuat. Kita cinta negeri ini. Suatu saat Republik ini akan bebas dari korupsi tapi harus bertahap
                                         <i
                                             class="
                                                     bx
@@ -218,15 +163,14 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- End testimonial item -->
 
                         <div class="swiper-slide">
                             <div class="testimonial-wrap">
                                 <div class="testimonial-item">
-                                    <img src="{{ asset('frontend/home/assets/img/testimonials/testimonials-3.jpg') }}"
+                                    <img src="{{ asset('frontend/home/assets/img/quotes/soekarno.jpg') }}"
                                         class="testimonial-img" alt="" />
-                                    <h3>Jena Karlis</h3>
-                                    <h4>Store Owner</h4>
+                                    <h3>Ir. Soekarno</h3>
+                                    <h4>Presiden Indonesia ke-1</h4>
                                     <p>
                                         <i
                                             class="
@@ -234,11 +178,7 @@
                                                     bxs-quote-alt-left
                                                     quote-icon-left
                                                 "></i>
-                                        Enim nisi quem export duis labore
-                                        cillum quae magna enim sint quorum
-                                        nulla quem veniam duis minim tempor
-                                        labore quem eram duis noster aute
-                                        amet eram fore quis sint minim.
+                                        Belajar tanpa berpikir itu tidaklah berguna, berpikir tanpa belajar itu sangatlah berbahaya.
                                         <i
                                             class="
                                                     bx
@@ -249,15 +189,14 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- End testimonial item -->
 
                         <div class="swiper-slide">
                             <div class="testimonial-wrap">
                                 <div class="testimonial-item">
-                                    <img src="{{ asset('frontend/home/assets/img/testimonials/testimonials-4.jpg') }}"
+                                    <img src="{{ asset('frontend/home/assets/img/quotes/hatta.jpg') }}"
                                         class="testimonial-img" alt="" />
-                                    <h3>Matt Brandon</h3>
-                                    <h4>Freelancer</h4>
+                                    <h3>Mohammad Hatta</h3>
+                                    <h4>Wakil Presiden Indonesia ke-1</h4>
                                     <p>
                                         <i
                                             class="
@@ -265,12 +204,7 @@
                                                     bxs-quote-alt-left
                                                     quote-icon-left
                                                 "></i>
-                                        Fugiat enim eram quae cillum dolore
-                                        dolor amet nulla culpa multos export
-                                        minim fugiat minim velit minim dolor
-                                        enim duis veniam ipsum anim magna
-                                        sunt elit fore quem dolore labore
-                                        illum veniam.
+                                        Indonesia merdeka bukan tujuan akhir kita. Indonesia merdeka hanya syarat untuk bisa mencapai kebahagiaan dan kemakmuran rakyat.
                                         <i
                                             class="
                                                     bx
@@ -281,15 +215,13 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- End testimonial item -->
-
                         <div class="swiper-slide">
                             <div class="testimonial-wrap">
                                 <div class="testimonial-item">
-                                    <img src="{{ asset('frontend/home/assets/img/testimonials/testimonials-5.jpg') }}"
+                                    <img src="{{ asset('frontend/home/assets/img/quotes/najwa.png') }}"
                                         class="testimonial-img" alt="" />
-                                    <h3>John Larson</h3>
-                                    <h4>Entrepreneur</h4>
+                                    <h3>Najwa Shihab</h3>
+                                    <h4>Presenter Berita, Jurnalis Indonesia</h4>
                                     <p>
                                         <i
                                             class="
@@ -297,12 +229,7 @@
                                                     bxs-quote-alt-left
                                                     quote-icon-left
                                                 "></i>
-                                        Quis quorum aliqua sint quem legam
-                                        fore sunt eram irure aliqua veniam
-                                        tempor noster veniam enim culpa
-                                        labore duis sunt culpa nulla illum
-                                        cillum fugiat legam esse veniam
-                                        culpa fore nisi cillum quid.
+                                                Pemuda hari ini harus turun tangan, berkarya nyata menjawab semesta Indonesia.
                                         <i
                                             class="
                                                     bx
@@ -313,102 +240,69 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- End testimonial item -->
                     </div>
                     <div class="swiper-pagination"></div>
                 </div>
             </div>
         </section>
-        <!-- End Testimonials Section -->
-
-        <!-- ======= F.A.Q Section ======= -->
+        {{-- Pertanyaan --}}
         <section id="faq" class="faq">
             <div class="container">
                 <div class="section-title" data-aos="fade-up">
-                    <h2>Frequently Asked Questions</h2>
+                    <h2>Q & A</h2>
                 </div>
-
                 <div class="row faq-item d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
                     <div class="col-lg-5">
                         <i class="ri-question-line"></i>
                         <h4>
-                            Non consectetur a erat nam at lectus urna duis?
+                            Siapa saja sih yang bisa memilih calon ketua dan wakil ketua umum Hima FH?
                         </h4>
                     </div>
                     <div class="col-lg-7">
                         <p>
-                            Feugiat pretium nibh ipsum consequat. Tempus
-                            iaculis urna id volutpat lacus laoreet non
-                            curabitur gravida. Venenatis lectus magna
-                            fringilla urna porttitor rhoncus dolor purus
-                            non.
+                            Mahasiswa reguler A, B, C, dan CK yang masuk ke dalam Daftar Pemilih Tetap (DPT) mempunyai hak untuk memilih. Diambil dua orang untuk delegasi dari setiap kelas.
                         </p>
                     </div>
                 </div>
-                <!-- End F.A.Q Item-->
-
                 <div class="row faq-item d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
                     <div class="col-lg-5">
                         <i class="ri-question-line"></i>
                         <h4>
-                            Feugiat scelerisque varius morbi enim nunc
-                            faucibus a pellentesque?
+                            Kapan sih Hima FH open recruitment?
                         </h4>
                     </div>
                     <div class="col-lg-7">
                         <p>
-                            Dolor sit amet consectetur adipiscing elit
-                            pellentesque habitant morbi. Id interdum velit
-                            laoreet id donec ultrices. Fringilla phasellus
-                            faucibus scelerisque eleifend donec pretium. Est
-                            pellentesque elit ullamcorper dignissim.
+                            Untuk open recruitment akan kami infokan di sosial media kami, jangan lupa untuk ikuti ya supaya tidak ketinggalan info.
                         </p>
                     </div>
                 </div>
-                <!-- End F.A.Q Item-->
-
                 <div class="row faq-item d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
                     <div class="col-lg-5">
                         <i class="ri-question-line"></i>
                         <h4>
-                            Dolor sit amet consectetur adipiscing elit
-                            pellentesque habitant morbi?
+                            Kapan sih pemilihan raya Hima FH dilaksanakan?
                         </h4>
                     </div>
                     <div class="col-lg-7">
                         <p>
-                            Eleifend mi in nulla posuere sollicitudin
-                            aliquam ultrices sagittis orci. Faucibus
-                            pulvinar elementum integer enim. Sem nulla
-                            pharetra diam sit amet nisl suscipit. Rutrum
-                            tellus pellentesque eu tincidunt. Lectus urna
-                            duis convallis convallis tellus.
+                            Untuk pemilihan dilaksanakan pada tanggal 17-19 Januari 2021.
                         </p>
                     </div>
                 </div>
-                <!-- End F.A.Q Item-->
-
                 <div class="row faq-item d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
                     <div class="col-lg-5">
                         <i class="ri-question-line"></i>
                         <h4>
-                            Ac odio tempor orci dapibus. Aliquam eleifend mi
-                            in nulla?
+                            Gimana sih cara loginnya?
                         </h4>
                     </div>
                     <div class="col-lg-7">
                         <p>
-                            Aperiam itaque sit optio et deleniti eos nihil
-                            quidem cumque. Voluptas dolorum accusantium sunt
-                            sit enim. Provident consequuntur quam aut
-                            reiciendis qui rerum dolorem sit odio. Repellat
-                            assumenda soluta sunt pariatur error doloribus
-                            fuga.
+                            Untuk login silahkan menonton video tutorial dimenu tutorial login.
                         </p>
                     </div>
                 </div>
-                <!-- End F.A.Q Item-->
-
                 <div class="row faq-item d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="500">
                     <div class="col-lg-5">
                         <i class="ri-question-line"></i>
@@ -428,16 +322,14 @@
                         </p>
                     </div>
                 </div>
-                <!-- End F.A.Q Item-->
             </div>
         </section>
-        <!-- End F.A.Q Section -->
 
         <!-- ======= Contact Section ======= -->
-        <section id="contact" class="contact">
+        <section id="kontak" class="contact">
             <div class="container">
                 <div class="section-title" data-aos="fade-up">
-                    <h2>Contact Us</h2>
+                    <h2>Kontak Kami</h2>
                 </div>
 
                 <div class="row">
@@ -447,10 +339,8 @@
                             <div class="social-links">
                                 <a href="https://twitter.com/HimaFhu" class="twitter"><i
                                         class="bi bi-twitter"></i></a>
-                                <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
                                 <a href="https://instagram.com/himafh_unpam" class="instagram"><i
                                         class="bi bi-instagram"></i></a>
-                                <a href="#" class="linkedin"><i class="bi bi-youtube"></i></a>
                             </div>
                         </div>
                     </div>
@@ -541,10 +431,7 @@
     {{-- <script src="{{asset('frontend/home/assets/vendor/purecounter/purecounter.js')}}"></script> --}}
     <script src="{{ asset('frontend/home/assets/vendor/aos/aos.js') }}"></script>
     <script src="{{ asset('frontend/home/assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-    <script src="{{ asset('frontend/home/assets/vendor/glightbox/js/glightbox.min.js') }}"></script>
-    <script src="{{ asset('frontend/home/assets/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
     <script src="{{ asset('frontend/home/assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
-    <script src="{{ asset('frontend/home/assets/vendor/php-email-form/validate.js') }}"></script>
 
     <!-- Template Main JS File -->
     <script src="{{ asset('frontend/home/assets/js/main.js') }}"></script>

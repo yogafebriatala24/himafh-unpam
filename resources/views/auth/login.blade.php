@@ -36,7 +36,7 @@
                                 <div class="form-group first mb-3">
                                     <input id="username" type="text"
                                         class="form-control @error('username') is-invalid @enderror" name="username"
-                                        value="{{ old('username') }}" placeholder="Masuk nim anda" required
+                                        value="{{ old('username') }}" placeholder="Masukan nim anda" required
                                         autocomplete="username" autofocus>
                                     @error('username')
                                         <span class="invalid-feedback" role="alert">
