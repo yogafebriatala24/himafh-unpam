@@ -1,10 +1,10 @@
 <div>
     @section('title')
-        Manajemen Kandidat
+        Manajemen Calon Kandidat
     @endsection
 
     <div class="btn btn-primary">
-        Tambah Pasangan Calon
+        Tambah Calon
     </div>
     <section class="section profile mt-4">
         <div class="row">

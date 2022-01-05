@@ -23,7 +23,7 @@ class TambahKandidatLiveWire extends Component
         }
         $users = User::where('name', 'LIKE', "%" . $this->search . "%")
             ->orWhere('email', 'LIKE', "%" . $this->search . "%")
-            ->orWhere('nim', 'LIKE', "%" . $this->search . "%")->get();
+            ->orWhere('username', 'LIKE', "%" . $this->search . "%")->get();
         return view('livewire.admin.tambah-kandidat-live-wire', [
             'users' => $users
         ])->extends('layouts.admin')->section('content');
@@ -68,5 +68,9 @@ class TambahKandidatLiveWire extends Component
             'role' => $this->role,
             'image' => $image
         ]);
+
+        $this->emit('newCalon');
+
+        return redirect()->to('dashboard/calons');
     }
 }

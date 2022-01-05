@@ -33,13 +33,14 @@
             <ul id="forms-nav" class="nav-content collapse {{ request()->is('dashboard/calons*') ? 'show' : '' }}"
                 data-bs-parent="#sidebar-nav" style="">
                 <li>
-                    <a href="forms-elements.html">
+                    <a href="{{ route('paslon.index') }}"
+                        class="{{ request()->is('dashboard/calons/paslon') ? 'active' : '' }}">
                         <i class="bi bi-circle"></i><span>Paslon</span>
                     </a>
                 </li>
                 <li>
                     <a href="{{ route('livewire-calon') }}"
-                        class="{{ request()->is('dashboard/calons*') ? 'active' : '' }}">
+                        class="{{ request()->is('dashboard/calons') ? 'active' : '' }}">
                         <i class="bi bi-circle"></i><span>Calon</span>
                     </a>
                 </li>

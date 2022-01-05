@@ -1,10 +1,10 @@
 <div>
     @section('title')
-        Manajemen Kandidat
+        Manajemen Calon Kandidat
     @endsection
 
     <a href="{{ route('livewire-calon-create') }}" class="btn btn-primary">
-        Tambah Pasangan Calon
+        Tambah Calon
     </a>
 
     <section class="section profile mt-4">

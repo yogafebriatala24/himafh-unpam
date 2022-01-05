@@ -10,13 +10,33 @@ class CalonLiveWire extends Component
 {
     use LivewireAlert;
     public $kandidatId;
+    public $kandidat;
+
+    // protected $listeners = ['newCalon'];
+    protected $listeners = [
+        'confirmHapus', 'newCalon'
+    ];
+    public function newCalon()
+    {
+        $this->alert('warning', 'Yakin hapus data ?', [
+            'showConfirmButton' => true,
+            'confirmButtonText' => 'Yakin',
+            'onConfirmed' => 'confirmHapus',
+            'showCancelButton' => true,
+            'cancelButtonText' => 'Cancel',
+            'onCancel' => 'confirmCancel',
+            'timer' => null,
+            'position' => 'center',
+            'toast' => false,
+        ]);
+    }
 
     public function render()
     {
-        $kandidat = Kandidat::with('user')->get();
+        $this->kandidat = Kandidat::with('user')->get();
 
         return view('livewire.admin.calon-live-wire', [
-            'kandidats' => $kandidat
+            'kandidats' => $this->kandidat
         ])->extends('layouts.admin')->section('content');
     }
 
@@ -35,9 +55,7 @@ class CalonLiveWire extends Component
             'toast' => false,
         ]);
     }
-    protected $listeners = [
-        'confirmHapus',
-    ];
+
 
     public function confirmHapus($data)
     {
