@@ -43,31 +43,31 @@ class UserSeeder extends Seeder
             'reguler' => 'Z',
             'roles' => 'admin'
         ]);
-        // for ($i = 0; $i < 10; $i++) {
-        //     User::create([
-        //         'name' => $faker->name,
-        //         'email' => $faker->email,
-        //         'password' => Hash::make('admin2022'),
-        //         'passwordtwo' => Crypt::encryptString('admin2022'),
-        //         'username' => rand(10000000, 100000000),
-        //         'no_tlp' => $faker->phoneNumber,
-        //         'kelas' => 'TPLA' . $i,
-        //         'reguler' => 'A',
-        //     ]);
-        // }
-        // for ($i = 0; $i < 10; $i++) {
-        //     User::create([
-        //         'name' => $faker->name,
-        //         'email' => $faker->email,
-        //         'password' => Hash::make('admin2022'),
-        //         'passwordtwo' => Crypt::encryptString('admin2022'),
-        //         'username' =>
-        //         rand(10000000, 100000000),
-        //         'no_tlp' => $faker->phoneNumber,
-        //         'kelas' => 'TPLB' . $i,
-        //         'reguler' => 'B',
-        //     ]);
-        // }
+        for ($i = 0; $i < 10; $i++) {
+            User::create([
+                'name' => $faker->name,
+                'email' => $faker->email,
+                'password' => Hash::make('admin2022'),
+                'passwordtwo' => Crypt::encryptString('admin2022'),
+                'username' => rand(10000000, 100000000),
+                'no_tlp' => $faker->phoneNumber,
+                'kelas' => 'TPLA' . $i,
+                'reguler' => 'A',
+            ]);
+        }
+        for ($i = 0; $i < 10; $i++) {
+            User::create([
+                'name' => $faker->name,
+                'email' => $faker->email,
+                'password' => Hash::make('admin2022'),
+                'passwordtwo' => Crypt::encryptString('admin2022'),
+                'username' =>
+                rand(10000000, 100000000),
+                'no_tlp' => $faker->phoneNumber,
+                'kelas' => 'TPLB' . $i,
+                'reguler' => 'B',
+            ]);
+        }
         for ($i = 0; $i < 3; $i++) {
             User::create([
                 'name' => $faker->name,

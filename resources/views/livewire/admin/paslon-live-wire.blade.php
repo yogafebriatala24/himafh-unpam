@@ -10,15 +10,20 @@
                             </div>
                         </h3>
                         <div class="row">
-                            @foreach ($item->kandidat as $kandidat)
-                                <div class="col-6">
-                                    <img src="{{ asset('/storage/' . $kandidat->image) }}"
-                                        class="img-fluid img-kandidat rounded">
-                                    <h5 class="mt-2 text-center">
-                                        {{ $kandidat->user->name }} - {{ $kandidat->role }}
-                                    </h5>
-                                </div>
-                            @endforeach
+                            <div class="col-6">
+                                <img src="{{ asset('/storage/' . $item->ketua->image) }}"
+                                    class="img-fluid img-kandidat rounded">
+                                <h5 class="mt-2 text-center">
+                                    {{ $item->ketua->user->name }}
+                                </h5>
+                            </div>
+                            <div class="col-6">
+                                <img src="{{ asset('/storage/' . $item->wakil->image) }}"
+                                    class="img-fluid img-kandidat rounded">
+                                <h5 class="mt-2 text-center">
+                                    {{ $item->wakil->user->name }}
+                                </h5>
+                            </div>
                         </div>
                         <hr>
                         @if ($cekId === $item->id)
@@ -36,17 +41,17 @@
                             <div class="col">
                                 <div class="d-grid gap-2">
                                     <div class="btn btn-outline-danger  btn-block"
-                                        wire:click="cek({{ $item->id }})">
+                                        wire:click="hapus({{ $item->id }})">
                                         Hapus
                                     </div>
                                 </div>
                             </div>
                             <div class="col">
                                 <div class="d-grid gap-2">
-                                    <div class="btn btn-outline-primary  btn-block"
-                                        wire:click="cek({{ $item->id }})">
+                                    <a href="{{ route('paslon.edit', $item->id) }}"
+                                        class="btn btn-outline-primary  btn-block">
                                         Edit
-                                    </div>
+                                    </a>
                                 </div>
                             </div>
                         </div>

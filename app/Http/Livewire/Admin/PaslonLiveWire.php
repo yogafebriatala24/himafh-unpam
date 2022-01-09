@@ -12,11 +12,12 @@ class PaslonLiveWire extends Component
     use LivewireAlert;
     public $paslon;
     public $cekVisiMisi, $cekId = 0;
+    public $hapusId = 0;
 
     public function render()
     {
-        $this->paslon = Paslon::with('kandidat.user')->get();
-        // dd($this->paslon);
+        $this->paslon = Paslon::with('ketua.user', 'wakil.user')->get();
+
         return view('livewire.admin.paslon-live-wire', [
             'paslons' => $this->paslon,
         ]);
@@ -29,5 +30,44 @@ class PaslonLiveWire extends Component
         } else {
             $this->cekId = $id;
         }
+    }
+    public function hapus($id)
+    {
+        $this->hapusId = $id;
+        $this->alert('warning', 'Yakin hapus data ?', [
+            'showConfirmButton' => true,
+            'confirmButtonText' => 'Yakin',
+            'onConfirmed' => 'confirmHapus',
+            'showCancelButton' => true,
+            'cancelButtonText' => 'Cancel',
+            'onCancel' => 'confirmCancel',
+            'timer' => null,
+            'position' => 'center',
+            'toast' => false,
+        ]);
+    }
+    protected $listeners = [
+        'confirmHapus',
+    ];
+
+    public function confirmHapus()
+    {
+        $paslon = Paslon::find($this->hapusId);
+        $paslon->delete();
+
+        $wakil = Kandidat::where('paslon_id', $paslon)->where('role', 'Wakil')->first();
+        $ketua = Kandidat::where('paslon_id', $paslon)->where('role', 'Ketua')->first();
+
+        $wakil->paslon_id = 0;
+        $ketua->paslon_id = 0;
+
+        $wakil->save();
+        $ketua->save();
+
+        $this->alert('success', 'Berhasil hapus data', [
+            'position' => 'top',
+            'timer' => 3000,
+            'toast' => true,
+        ]);
     }
 }

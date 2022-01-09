@@ -13,15 +13,20 @@ use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Maatwebsite\Excel\Facades\Excel;
 use Livewire\WithFileUploads;
 use Illuminate\Support\Str;
+use Livewire\WithPagination;
 
 class UserLiveWire extends Component
 {
     use LivewireAlert;
     use WithFileUploads;
+    use WithPagination;
+
+
+    protected $paginationTheme = 'bootstrap';
 
     public $name, $email, $nim, $reg, $password;
-    public $limit = 10, $countUser, $maxLimit = false;
-    public $keyword;
+    public $limit = 10, $countUser;
+    public $keyword, $filterReg, $jmlData = 8;
     public $click, $userId = 0;
     public $fileExcel, $iteration;
 
@@ -39,11 +44,11 @@ class UserLiveWire extends Component
         if (strlen($this->keyword) >= 2) {
             $users = User::where('name', 'LIKE', "%" . $this->keyword . "%")
                 ->orWhere('email', 'LIKE', "%" . $this->keyword . "%")
-                ->orWhere('username', 'LIKE', "%" . $this->keyword . "%")->get();
-            $this->maxLimit = true;
+                ->orWhere('username', 'LIKE', "%" . $this->keyword . "%")->paginate($this->jmlData);
+        } elseif ($this->filterReg) {
+            $users = User::orderBy('id', 'asc')->where('reguler', $this->filterReg)->paginate($this->jmlData);
         } else {
-            $users = User::orderBy('id', 'asc')->limit($this->limit)->get();
-            $this->maxLimit = false;
+            $users = User::orderBy('id', 'asc')->paginate($this->jmlData);
         }
 
         return view('livewire.admin.user-live-wire', [
@@ -88,10 +93,8 @@ class UserLiveWire extends Component
 
         $user->update([
             'name' => $this->name,
-            'nim' => $this->nim,
+            'username' => $this->nim,
             'reguler' => $this->reg,
-            'password' => Hash::make($this->password),
-            'passwordtwo' => Crypt::encryptString($this->password)
         ]);
 
         $this->click = 0;

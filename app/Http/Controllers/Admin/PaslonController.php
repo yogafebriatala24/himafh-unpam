@@ -17,11 +17,8 @@ class PaslonController extends Controller
      */
     public function index()
     {
-        $paslon = Paslon::with('kandidat.user')->get();
-        // return response()->json([$paslon]);
-        return view('pages.admin.paslon.index', [
-            'paslons' => $paslon
-        ]);
+
+        return view('pages.admin.paslon.index');
     }
 
     /**
@@ -49,23 +46,7 @@ class PaslonController extends Controller
     public function store(PaslonRequest $request)
     {
         $data = $request->all();
-
-        $cekKetua =  Kandidat::where('id', $request->ketua_id)->first();
-        if ($cekKetua->paslon_id !== null) {
-            return redirect()->route('paslon.create')->with('status', 'Calon ketua sudah memiliki pasangan calon');
-        }
-
-        $cekWakil =  Kandidat::where('id', $request->wakil_id)->first();
-        if ($cekWakil->paslon_id !== null) {
-            return redirect()->route('paslon.create')->with('status', 'Calon Wakil sudah memiliki pasangan calon');
-        }
-
         $paslon = Paslon::create($data);
-
-        $cekKetua->paslon_id = $paslon->id;
-        $cekWakil->paslon_id = $paslon->id;
-        $cekKetua->save();
-        $cekWakil->save();
 
         return redirect()->route('paslon.index')->with('status', 'berhasil tambah pasangan calon');
     }
@@ -89,7 +70,16 @@ class PaslonController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = Paslon::find($id);
+
+        $ketua = Kandidat::with('user')->where('role', 'Ketua')->get();
+        $wakil = Kandidat::with('user')->where('role', 'Wakil')->get();
+
+        return view('pages.admin.paslon.edit', [
+            'ketuas' => $ketua,
+            'wakils' => $wakil,
+            'data' => $data
+        ]);
     }
 
     /**

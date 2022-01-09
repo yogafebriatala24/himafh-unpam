@@ -18,6 +18,9 @@ class CreatePaslonsTable extends Migration
             $table->integer('nomor');
             $table->longText('visi');
             $table->longText('misi');
+            $table->integer('ketua_id');
+            $table->integer('wakil_id');
+            $table->longText('frame_ytb')->nullable();
             $table->timestamps();
         });
     }

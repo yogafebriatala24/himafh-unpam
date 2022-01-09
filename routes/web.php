@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\PaslonController;
 use App\Http\Controllers\DepanController;
 use App\Http\Controllers\Front\ProfileKandidatController;
 use App\Http\Livewire\Admin\CalonLiveWire;
+use App\Http\Livewire\Admin\DashboardLiveWire;
 use App\Http\Livewire\Admin\PaslonCreateLiveWire;
 use App\Http\Livewire\Admin\PaslonLiveWire;
 use App\Http\Livewire\Admin\RoomLiveWire;
@@ -12,6 +13,7 @@ use App\Http\Livewire\Admin\UserLiveWire;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Crypt;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,9 +36,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('layouts.admin');
-})->name('dashboard-admin');
+Route::get('/dashboard', DashboardLiveWire::class)->name('dashboard-admin');
 
 Auth::routes();
 
@@ -47,8 +47,6 @@ Route::get('dashboard/users', UserLiveWire::class)->name('livewire-user')->middl
 Route::get('dashboard/rooms', RoomLiveWire::class)->name('livewire-room')->middleware('auth');
 Route::get('dashboard/calons', CalonLiveWire::class)->name('livewire-calon')->middleware('auth');
 Route::get('dashboard/calons/tambah', TambahKandidatLiveWire::class)->name('livewire-calon-create')->middleware('auth');
-// Route::get('dashboard/calons/paslon', PaslonLiveWire::class)->name('livewire-paslon')->middleware('auth');
-// Route::get('dashboard/calons/paslon/create', PaslonCreateLiveWire::class)->name('livewire-paslon-create')->middleware('auth');
 Route::resource('dashboard/calons/paslon', PaslonController::class)->middleware('auth');
 
 // front
@@ -59,3 +57,11 @@ Route::get('logout', function () {
     Auth::logout();
     return redirect('/');
 })->name('logout');
+
+// cek duplikat 
+Route::get('duplikat', function () {
+    $data = User::whereIn('username', function ($query) {
+        $query->select('username')->from('users')->groupBy('username')->havingRaw('count(*) > 1');
+    })->get();
+    return response()->json($data);
+});

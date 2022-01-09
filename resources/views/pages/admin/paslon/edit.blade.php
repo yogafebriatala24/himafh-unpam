@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    Create Pasangan Calon
+    Edit Pasangan Calon
 @endsection
 
 @section('content')
@@ -26,14 +26,15 @@
                 <div class="row">
                     <div class="col-12">
                         <label for="">Pasang Nomor Urut</label>
-                        <input type="number" class="form-control" name="nomor" value="{{ old('nomor') }}">
+                        <input type="number" class="form-control" name="nomor" value="{{ $data->nomor }}">
                     </div>
                     <div class="col-6">
                         <label for="">Ketua</label>
                         <select name="ketua_id" class="form-select">
                             <option>Pilih Ketua</option>
                             @foreach ($ketuas as $item)
-                                <option value="{{ $item->id }}">{{ $item->user->name }}</option>
+                                <option value="{{ $item->id }}" {{ $item->id === $data->ketua_id ? 'selected' : '' }}>
+                                    {{ $item->user->name }}</option>
                             @endforeach
                         </select>
                     </div>
@@ -42,17 +43,18 @@
                         <select name="wakil_id" class="form-select">
                             <option>Pilih Wakil</option>
                             @foreach ($wakils as $item)
-                                <option value="{{ $item->id }}">{{ $item->user->name }}</option>
+                                <option value="{{ $item->id }}" {{ $item->id === $data->wakil_id ? 'selected' : '' }}>
+                                    {{ $item->user->name }}</option>
                             @endforeach
                         </select>
                     </div>
                     <div class="col-6">
                         <label for=""> Visi</label>
-                        <textarea id="editor" name="visi">{{ old('visi') }}</textarea>
+                        <textarea id="editor" name="visi">{!! $data->visi !!}</textarea>
                     </div>
                     <div class="col-6">
                         <label for=""> Misi</label>
-                        <textarea id="editor2" name="misi">{{ old('misi') }}</textarea>
+                        <textarea id="editor2" name="misi">{!! $data->misi !!}</textarea>
                     </div>
                     <div class="col-12 mt-4">
                         <button type="submit" class="btn btn-himafh">Submit</button>
