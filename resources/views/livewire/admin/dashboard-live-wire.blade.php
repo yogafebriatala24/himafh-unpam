@@ -58,6 +58,69 @@
                 </div>
             </div>
         </div>
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Suara sft</h5>
+
+                    <!-- Column Chart -->
+                    <div id="columnChart"></div>
+
+                    <script>
+                        document.addEventListener("DOMContentLoaded", () => {
+                            new ApexCharts(document.querySelector("#columnChart"), {
+                                series: [{
+                                    name: 'Suara Terpakai',
+                                    data: [{{ $suaraTerpakai }}]
+                                }, {
+                                    name: 'Sisa Suara',
+                                    data: [{{ $sisaSuara }}]
+                                }],
+                                chart: {
+                                    type: 'bar',
+                                    height: 350
+                                },
+                                plotOptions: {
+                                    bar: {
+                                        horizontal: false,
+                                        columnWidth: '55%',
+                                        endingShape: 'rounded'
+                                    },
+                                },
+                                dataLabels: {
+                                    enabled: false
+                                },
+                                stroke: {
+                                    show: true,
+                                    width: 2,
+                                    colors: ['transparent']
+                                },
+                                xaxis: {
+                                    categories: ['Suara Terpakai', 'Sisa Suara'],
+                                },
+                                yaxis: {
+                                    title: {
+                                        text: 'Diagram Suara'
+                                    }
+                                },
+                                fill: {
+                                    opacity: 1
+                                },
+                                tooltip: {
+                                    y: {
+                                        formatter: function(val) {
+                                            return val + " Suara"
+                                        }
+                                    }
+                                }
+                            }).render();
+                        });
+                    </script>
+                    <!-- End Column Chart -->
+
+                </div>
+            </div>
+        </div>
         <div class="col-lg-4">
             <div class="card">
                 <div class="card-body">
@@ -100,9 +163,10 @@
                 </div>
             </div>
         </div>
+
     </div>
 
     @push('script')
-        <script src="{{ asset('NiceAdmin/assets/vendor/chart.js/chart.min.js') }}"></script>
+        {{-- <script src="{{ asset('NiceAdmin/assets/vendor/chart.js/chart.min.js') }}"></script> --}}
     @endpush
 </div>

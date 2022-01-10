@@ -11,9 +11,10 @@
     {{-- Styling --}}
     @include('includes.front.style')
 </head>
+
 <body>
     @include('includes.front.navbar')
-    <section id="hero" class="d-flex align-items-center">
+    <section id="hero" class="d-flex align-items-center mt-5">
         <div class="container">
             <div class="row">
                 <div
@@ -43,7 +44,7 @@
             </div>
         </div>
     </section>
-        {{-- Konten --}}
+    {{-- Konten --}}
     <main id="main">
         {{-- Calon --}}
         <section id="calon" class="team section-bg">
@@ -54,56 +55,44 @@
                 </div>
 
                 <div class="row justify-content-center">
-                    <div class="col-9 col-lg-4 d-flex align-items-stretch">
-                        <div class="member" data-aos="fade-up" data-aos-delay="100">
-                            <div class="member-img">
-                                <img src="{{ asset('frontend/home/assets/img/team/team-1.jpg') }}"
-                                    class="img-fluid" alt="" />
-                                    <div class="d-grid">
-                                        <a href="{{ route('profile') }}" class="btn mx-4 mt-1 py-2">Profil Kandidat</a>
+                    @foreach ($paslon as $item)
+                        <div class="col-9 col-lg-4 d-flex align-items-stretch">
+                            <div class="member" data-aos="fade-up" data-aos-delay="100">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="card">
+                                            <div class="member-img">
+                                                <img src="{{ asset('/storage/' . $item->ketua->image) }}"
+                                                    class="img-fluid" alt="" />
+                                                <div class="member-info">
+                                                    <h4>{{ $item->ketua->user->name }}</h4>
+                                                    <span>Calon Ketua Umum</span>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                            </div>
-                            <div class="member-info">
-                                <h4>Walter White</h4>
-                                <span>Calon Ketua Umum <br>
-                                    Paslon 1</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-9 col-lg-4 d-flex align-items-stretch">
-                        <div class="member" data-aos="fade-up" data-aos-delay="100">
-                            <div class="member-img">
-                                <img src="{{ asset('frontend/home/assets/img/team/team-1.jpg') }}"
-                                    class="img-fluid" alt="" />
-                                    <div class="d-grid">
-                                        <a href="{{ route('profile') }}" class="btn mx-4 mt-1 py-2">Profil Kandidat</a>
+                                    <div class="col">
+                                        <div class="card">
+                                            <div class="member-img">
+                                                <img src="{{ asset('/storage/' . $item->wakil->image) }}"
+                                                    class="img-fluid" alt="" />
+                                                <div class="member-info">
+                                                    <h4>{{ $item->wakil->user->name }}</h4>
+                                                    <span>Calon Wakil Ketua</span>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                            </div>
-                            <div class="member-info">
-                                <h4>Walter White</h4>
-                                <span>Calon Ketua Umum <br>
-                                    Paslon 1</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-9 col-lg-4 d-flex align-items-stretch">
-                        <div class="member" data-aos="fade-up" data-aos-delay="100">
-                            <div class="member-img">
-                                <img src="{{ asset('frontend/home/assets/img/team/team-1.jpg') }}"
-                                    class="img-fluid" alt="" />
-                                    <div class="d-grid">
-                                        <a href="{{ route('profile') }}" class="btn mx-4 mt-1 py-2">Profil Kandidat</a>
+                                    <div class="d-grid gap-2 mb-2">
+                                        <a href="{{ route('profile') }}" class="btn mx-2 mt-1 py-2">Profil
+                                            Kandidat 0{{ $item->nomor }}</a>
                                     </div>
-                            </div>
-                            <div class="member-info">
-                                <h4>Walter White</h4>
-                                <span>Calon Ketua Umum <br>
-                                    Paslon 1</span>
-                            </div>
-                        </div>
-                    </div>
+                                </div>
 
-                    
+                            </div>
+                        </div>
+                    @endforeach
+
                 </div>
             </div>
         </section>
@@ -126,7 +115,9 @@
                                                     bxs-quote-alt-left
                                                     quote-icon-left
                                                 "></i>
-                                                Demokrasi harus berlandaskan kedaulatan hukum dan persamaan setiap warga negara tenpa mebedakan latar belakang ras, suku agama dan asal muasal, di muka-undang-undang.
+                                        Demokrasi harus berlandaskan kedaulatan hukum dan persamaan setiap warga negara
+                                        tenpa mebedakan latar belakang ras, suku agama dan asal muasal, di
+                                        muka-undang-undang.
                                         <i
                                             class="
                                                     bx
@@ -152,7 +143,9 @@
                                                     bxs-quote-alt-left
                                                     quote-icon-left
                                                 "></i>
-                                        Negara kita jangan kumuh dengan korupsi. Apapun yang dapat kita perbuat, ya kita perbuat. Kita cinta negeri ini. Suatu saat Republik ini akan bebas dari korupsi tapi harus bertahap
+                                        Negara kita jangan kumuh dengan korupsi. Apapun yang dapat kita perbuat, ya kita
+                                        perbuat. Kita cinta negeri ini. Suatu saat Republik ini akan bebas dari korupsi
+                                        tapi harus bertahap
                                         <i
                                             class="
                                                     bx
@@ -178,7 +171,8 @@
                                                     bxs-quote-alt-left
                                                     quote-icon-left
                                                 "></i>
-                                        Belajar tanpa berpikir itu tidaklah berguna, berpikir tanpa belajar itu sangatlah berbahaya.
+                                        Belajar tanpa berpikir itu tidaklah berguna, berpikir tanpa belajar itu
+                                        sangatlah berbahaya.
                                         <i
                                             class="
                                                     bx
@@ -204,7 +198,8 @@
                                                     bxs-quote-alt-left
                                                     quote-icon-left
                                                 "></i>
-                                        Indonesia merdeka bukan tujuan akhir kita. Indonesia merdeka hanya syarat untuk bisa mencapai kebahagiaan dan kemakmuran rakyat.
+                                        Indonesia merdeka bukan tujuan akhir kita. Indonesia merdeka hanya syarat untuk
+                                        bisa mencapai kebahagiaan dan kemakmuran rakyat.
                                         <i
                                             class="
                                                     bx
@@ -229,7 +224,7 @@
                                                     bxs-quote-alt-left
                                                     quote-icon-left
                                                 "></i>
-                                                Pemuda hari ini harus turun tangan, berkarya nyata menjawab semesta Indonesia.
+                                        Pemuda hari ini harus turun tangan, berkarya nyata menjawab semesta Indonesia.
                                         <i
                                             class="
                                                     bx
@@ -260,7 +255,8 @@
                     </div>
                     <div class="col-lg-7">
                         <p>
-                            Mahasiswa reguler A, B, C, dan CK yang masuk ke dalam Daftar Pemilih Tetap (DPT) mempunyai hak untuk memilih. Diambil dua orang untuk delegasi dari setiap kelas.
+                            Mahasiswa reguler A, B, C, dan CK yang masuk ke dalam Daftar Pemilih Tetap (DPT) mempunyai
+                            hak untuk memilih. Diambil dua orang untuk delegasi dari setiap kelas.
                         </p>
                     </div>
                 </div>
@@ -273,7 +269,8 @@
                     </div>
                     <div class="col-lg-7">
                         <p>
-                            Untuk open recruitment akan kami infokan di sosial media kami, jangan lupa untuk ikuti ya supaya tidak ketinggalan info.
+                            Untuk open recruitment akan kami infokan di sosial media kami, jangan lupa untuk ikuti ya
+                            supaya tidak ketinggalan info.
                         </p>
                     </div>
                 </div>

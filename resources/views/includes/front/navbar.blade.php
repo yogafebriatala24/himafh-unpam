@@ -14,11 +14,13 @@
         <nav id="navbar" class="navbar">
             <ul>
                 <li>
-                    <a class="nav-link scrollto active" href="{{ route('depan') }}">Home</a>
+                    <a class="nav-link scrollto {{ request()->is('/') ? 'active' : '' }}"
+                        href="{{ route('depan') }}">Home</a>
                 </li>
 
                 <li>
-                    <a class="nav-link scrollto" href="#pricing"> Room</a>
+                    <a class="nav-link scrollto {{ request()->is('room') ? 'active' : '' }}"
+                        href="{{ route('front-room') }}"> Room</a>
                 </li>
                 @guest
                     <li>

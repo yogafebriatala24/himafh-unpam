@@ -10,6 +10,7 @@ use App\Http\Livewire\Admin\PaslonLiveWire;
 use App\Http\Livewire\Admin\RoomLiveWire;
 use App\Http\Livewire\Admin\TambahKandidatLiveWire;
 use App\Http\Livewire\Admin\UserLiveWire;
+use App\Http\Livewire\Front\FrontRoomLiveWire;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Crypt;
@@ -53,10 +54,16 @@ Route::resource('dashboard/calons/paslon', PaslonController::class)->middleware(
 Route::get('profile-kandidat', [ProfileKandidatController::class, 'index'])->name('profile');
 Route::get('/', [DepanController::class, 'index'])->name('depan');
 
+Route::get('room', FrontRoomLiveWire::class)->name('front-room')->middleware('auth');
+
+
+
 Route::get('logout', function () {
     Auth::logout();
     return redirect('/');
 })->name('logout');
+
+
 
 // cek duplikat 
 Route::get('duplikat', function () {
