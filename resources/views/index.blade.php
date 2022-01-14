@@ -69,7 +69,7 @@
 
                 <div class="row justify-content-center">
                     @foreach ($paslon as $item)
-                        <div class="col-9 col-lg-4 d-flex align-items-stretch">
+                        <div class="col-11 col-lg-4 d-flex align-items-stretch">
                             <div class="member" data-aos="fade-up" data-aos-delay="100">
                                 <img src="{{ asset('/storage/' . $item->foto) }}"
                                                     class="img-fluid" alt="" />
