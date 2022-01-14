@@ -30,6 +30,8 @@
 </head>
 
 <body>
+    <link itemprop="thumbnailUrl" href="url_gambar"> <span itemprop="thumbnail" itemscope itemtype="https://himafhunpam.com/images/logo.png"> 
+        <link itemprop="url" href="https://himafhunpam.com/images/logo.png"> </span>
     <div class="content">
         <div class="container">
             <div class="row">
