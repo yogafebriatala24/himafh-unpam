@@ -27,7 +27,7 @@
     <link itemprop="thumbnailUrl" href="url_gambar"> <span itemprop="thumbnail" itemscope itemtype="https://himafhunpam.com/logo_hima.jpg"> 
     <link itemprop="url" href="https://himafhunpam.com/logo_hima.jpg"> </span>
     @include('includes.front.navbar')
-    <section id="hero" class="d-flex align-items-center mt-5">
+    <section id="hero" class="d-flex align-items-center">
         <div class="container">
             <div class="row">
                 <div
