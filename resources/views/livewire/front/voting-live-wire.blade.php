@@ -20,18 +20,18 @@
                     <div class="col">
                         <div class="member-info">
                             <h6 class="mt-2" style="font-weight: bold">{{ $item->ketua->user->name }}</h6>
-                            <span style="font-size: 14px">Calon Ketua Umum</span>
+                            <span style="font-size: 11px">Calon Ketua Umum</span>
                         </div>
                     </div>
                     <div class="col">
                         <div class="member-info">
                             <h6 class="mt-2" style="font-weight: bold">{{ $item->wakil->user->name }}</h6>
-                            <span style="font-size: 14px">Calon Wakil Ketua Umum</span>
+                            <span style="font-size: 11px">Calon Wakil Ketua Umum</span>
                         </div>
                     </div>
                 </div>
                 <div class="d-grid gap-2 mt-2">
-                    <a href="{{route('vote', $item->id)}}" class="btn-danger text-center">Vote Pasangan Calon 0{{ $item->nomor }}</a>
+                    <a href="{{route('vote', $item->id)}}" class="btn btn-danger btn-sm text-center">Vote Pasangan Calon 0{{ $item->nomor }}</a>
                 </div>
 
             </div>
