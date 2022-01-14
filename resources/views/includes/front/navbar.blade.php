@@ -7,7 +7,7 @@
                     justify-content-between
                 ">
         <div class="logo">
-            <a href="index.html">
+            <a href="/">
                 <img src="{{ asset('images/logo.png') }}" alt="" /> </a>Hima FH Unpam
         </div>
 
