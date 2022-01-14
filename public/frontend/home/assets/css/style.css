@@ -324,25 +324,26 @@ h6 {
 }
 #hero h1 {
     margin: 0 0 10px 0;
-    font-size: 48px;
+    font-size: 44px;
     font-weight: 700;
     line-height: 56px;
     color: black;
 }
 #hero h2 {
     color: #484848;
-    margin-bottom: 50px;
+    margin-bottom: 35px;
+    margin-top: 10px;
     font-size: 24px;
+    font-weight: 370;
 }
 #hero .btn-get-started {
-    font-family: "Poppins", sans-serif;
     font-weight: 500;
     font-size: 16px;
     letter-spacing: 1px;
     display: inline-block;
     padding: 10px 30px;
     border-radius: 50px;
-    transition: 0.5s;
+    transition: 0.3s;
     color: #962e30;
     border: 2px solid #962e30;
 }
@@ -454,9 +455,7 @@ section {
     margin: 15px 0 0 0;
 }
 
-/*--------------------------------------------------------------
-# Testimonials
---------------------------------------------------------------*/
+/* quotes */
 .testimonials .testimonial-wrap {
     padding-left: 50px;
 }
@@ -543,10 +542,6 @@ section {
     }
 }
 
-/* --------------------------------------------------------------
-# Portfolio
---------------------------------------------------------------*/
-
 /*--------------------------------------------------------------
 # Team
 --------------------------------------------------------------*/
@@ -566,50 +561,24 @@ section {
     background-color: #962e30;
     color: white;
 }
-.team .member .social {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    height: 40px;
-    opacity: 0;
-    transition: ease-in-out 0.3s;
-    background: rgba(255, 255, 255, 0.85);
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-}
-.team .member .social a {
-    transition: color 0.3s;
-    color: #222222;
-    margin: 0 10px;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-}
-.team .member .social a i {
-    line-height: 0;
-}
-.team .member .social a:hover {
-    color: #3498db;
-}
-.team .member .social i {
-    font-size: 18px;
-    margin: 0 2px;
+.team .member .btn:hover {
+    background-color: #b64d4f;
+    color: white;
 }
 .team .member .member-info {
     padding: 25px 15px;
 }
 .team .member .member-info h4 {
-    font-weight: 700;
+    font-weight: 600;
     margin-bottom: 5px;
-    font-size: 18px;
+    font-size: 22px;
     color: #222222;
+    font-family: Poppins;
 }
 .team .member .member-info span {
     display: block;
-    font-size: 13px;
-    font-weight: 400;
+    font-size: 16px;
+    font-weight: 300;
     color: #aaaaaa;
 }
 .team .member .member-info p {
