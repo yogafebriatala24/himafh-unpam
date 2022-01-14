@@ -56,7 +56,7 @@
                                         autocomplete="username" autofocus>
                                     @error('username')
                                         <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
+                                            <strong>Login gagal email atau password salah</strong>
                                         </span>
                                     @enderror
                                 </div>
