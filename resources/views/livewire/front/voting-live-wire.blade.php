@@ -33,7 +33,7 @@
                             </div>
                         </div>
                         <div class="d-grid gap-2 mt-2">
-                            <a href="{{route('vote', $item->id)}}" class="btn btn-danger btn-sm text-center">Vote Pasangan Calon 0{{ $item->nomor }}</a>
+                            <a href="{{route('vote', $item->id)}}" class="btn btn-danger text-center">Vote Pasangan Calon 0{{ $item->nomor }}</a>
                         </div>
         
                     </div>
