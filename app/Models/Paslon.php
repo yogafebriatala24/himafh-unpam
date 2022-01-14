@@ -9,7 +9,7 @@ class Paslon extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['nomor', 'visi', 'misi', 'ketua_id', 'wakil_id'];
+    protected $fillable = ['nomor', 'visi', 'misi', 'ketua_id', 'wakil_id', 'foto', 'frame_ytb'];
 
     public function kandidat()
     {
@@ -22,5 +22,9 @@ class Paslon extends Model
     public function wakil()
     {
         return $this->belongsTo('App\Models\Kandidat', 'wakil_id');
+    }
+
+    public function suara(){
+        return $this->hasMany('App\Models\Suara');
     }
 }

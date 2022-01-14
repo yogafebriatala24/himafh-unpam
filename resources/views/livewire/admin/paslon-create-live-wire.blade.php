@@ -2,6 +2,13 @@
     <div class="card">
         <div class="card-body">
             <div class="row">
+                <div class="col-md-6">
+                    @if ($foto)
+                        <img src="{{ $foto->temporaryUrl() }}">
+                        <label for="">Foto Paslon</label>
+                        <input type="file" class="file-control" wire:model="foto">
+                    @endif
+                </div>
                 <div class="col-12">
                     <label for="">Pasang Nomor Urut</label>
                     <input type="number" class="form-control" wire:model.defer='nomor'>

@@ -61,7 +61,7 @@
         <div class="col-lg-6">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Suara sft</h5>
+                    <h5 class="card-title">Suara</h5>
 
                     <!-- Column Chart -->
                     <div id="columnChart"></div>
@@ -121,48 +121,47 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-4">
+
+        {{-- chart perhitungan suara --}}
+        <div class="col-lg-6">
             <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Suara</h5>
-
-                    <!-- Bar Chart -->
-                    <canvas id="barChart" style="max-height: 400px;"></canvas>
-                    <script>
-                        document.addEventListener("DOMContentLoaded", () => {
-                            new Chart(document.querySelector('#barChart'), {
-                                type: 'bar',
-                                data: {
-                                    labels: ['Suara Terpakai', 'Sisa Suara'],
-                                    datasets: [{
-                                        label: 'Diagram Suara',
-                                        data: [{{ $suaraTerpakai }}, {{ $sisaSuara }}],
-                                        backgroundColor: [
-                                            'rgba(255, 99, 132, 0.2)',
-                                            'rgba(255, 159, 64, 0.2)',
-                                        ],
-                                        borderColor: [
-                                            'rgb(255, 99, 132)',
-                                            'rgb(255, 159, 64)',
-                                        ],
-                                        borderWidth: 1
-                                    }]
-                                },
-                                options: {
-                                    scales: {
-                                        y: {
-                                            beginAtZero: true
-                                        }
-                                    }
-                                }
-                            });
-                        });
-                    </script>
-                    <!-- End Bar CHart -->
-
-                </div>
+              <div class="card-body">
+                <h5 class="card-title">Perolehan Suara</h5>
+  
+                <!-- Pie Chart -->
+                <div id="pieChart"></div>
+  
+                <script>
+                    var data = {!! $perhitungan !!};
+                    var nomor  = [];
+                    var suara = [];
+                    console.log(data);
+                    data.forEach(element => {
+                        nomor.push('Paslon 0'+element.nomor);
+                        suara.push(element.suara_count)
+                    });
+                    console.log(nomor);
+                    console.log(suara);
+                  document.addEventListener("DOMContentLoaded", () => {
+                    new ApexCharts(document.querySelector("#pieChart"), {
+                      series: suara,
+                      chart: {
+                        height: 350,
+                        type: 'pie',
+                        toolbar: {
+                          show: true
+                        }
+                      },
+                      labels: nomor
+                    }).render();
+                  });
+                </script>
+                <!-- End Pie Chart -->
+  
+              </div>
             </div>
-        </div>
+          </div>
+        {{-- endchart perhitungan suara --}}
 
     </div>
 

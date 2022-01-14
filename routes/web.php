@@ -11,6 +11,7 @@ use App\Http\Livewire\Admin\RoomLiveWire;
 use App\Http\Livewire\Admin\TambahKandidatLiveWire;
 use App\Http\Livewire\Admin\UserLiveWire;
 use App\Http\Livewire\Front\FrontRoomLiveWire;
+use App\Http\Livewire\Front\VotingLiveWire;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Crypt;
@@ -37,7 +38,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', DashboardLiveWire::class)->name('dashboard-admin');
+Route::get('/dashboard', DashboardLiveWire::class)->name('dashboard-admin')->middleware('auth', 'admin');
 
 Auth::routes();
 
@@ -51,11 +52,12 @@ Route::get('dashboard/calons/tambah', TambahKandidatLiveWire::class)->name('live
 Route::resource('dashboard/calons/paslon', PaslonController::class)->middleware('auth');
 
 // front
-Route::get('profile-kandidat', [ProfileKandidatController::class, 'index'])->name('profile');
+Route::get('profile-kandidat/{id}', [ProfileKandidatController::class, 'index'])->name('profile');
 Route::get('/', [DepanController::class, 'index'])->name('depan');
 
 Route::get('room', FrontRoomLiveWire::class)->name('front-room')->middleware('auth');
-
+Route::get('pilih', VotingLiveWire::class)->middleware('auth')->name('pilih');
+Route::get('vote/{id}', [ProfileKandidatController::class, 'vote'])->name('vote')->middleware('auth');
 
 
 Route::get('logout', function () {
@@ -72,3 +74,10 @@ Route::get('duplikat', function () {
     })->get();
     return response()->json($data);
 });
+
+// cek yg belum milih
+Route::get('secret', function(){
+    $user = User::with('suara')->get();
+
+    return response()->json([$user]);
+})->middleware('auth', 'admin');

@@ -9,7 +9,7 @@ class DepanController extends Controller
 {
     public function index()
     {
-        $paslon = Paslon::with('ketua.user', 'wakil.user')->get();
+        $paslon = Paslon::with('ketua.user', 'wakil.user')->orderBy('nomor', 'asc')->get();
 
         return view('index', [
             'paslon' => $paslon

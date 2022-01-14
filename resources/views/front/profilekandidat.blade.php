@@ -20,9 +20,10 @@
                                             flex-column
                                             align-items-center
                                         ">
-                                <img src="../../images/profile-img.jpg" alt="Profile" class="rounded-circle" />
+                                <img src="{{ asset('/storage/' . $paslon->ketua->image) }}" alt="Profile"
+                                    class="rounded-circle img-fluid" style="width: 120px; height: 120px; object-fit: cover" />
                                 <div class="pt-2 text-center">
-                                    <h4>Kevin Anderson</h4>
+                                    <h4>{{ $paslon->ketua->user->name }}</h4>
                                     <h5>Calon Ketua Umum</h5>
                                 </div>
                             </div>
@@ -39,11 +40,12 @@
                                             flex-column
                                             align-items-center
                                         ">
-                                <img src="../../images/profile-img.jpg" alt="Profile" class="rounded-circle" />
-                                <div class="pt-2 text-center">
-                                    <h4>Kevin Anderson</h4>
-                                    <h5>Calon Wakil Ketua Umum</h5>
-                                </div>
+                                        <img src="{{ asset('/storage/' . $paslon->wakil->image) }}" alt="Profile"
+                                        class="rounded-circle img-fluid" style="width: 120px; height: 120px; object-fit: cover" />
+                                    <div class="pt-2 text-center">
+                                        <h4>{{ $paslon->wakil->user->name }}</h4>
+                                        <h5>Calon Wakil Ketua Umum</h5>
+                                    </div>
                             </div>
                         </div>
                     </div>
@@ -55,32 +57,17 @@
                     <div class="card-body pt-5">
                         <h5 class="card-title">Visi</h5>
                         <p class="small fst-italic">
-                            Sunt est soluta temporibus
-                            accusantium neque nam maiores cumque
-                            temporibus. Tempora libero non est
-                            unde veniam est qui dolor. Ut sunt
-                            iure rerum quae quisquam autem
-                            eveniet perspiciatis odit. Fuga
-                            sequi sed ea saepe at unde.
+                            {!!$paslon->visi!!}
                         </p>
 
                         <h5 class="card-title">
                             Misi
                         </h5>
                         <p class="small fst-italic">
-                            Sunt est soluta temporibus
-                            accusantium neque nam maiores cumque
-                            temporibus. Tempora libero non est
-                            unde veniam est qui dolor. Ut sunt
-                            iure rerum quae quisquam autem
-                            eveniet perspiciatis odit. Fuga
-                            sequi sed ea saepe at unde.
+                            {!!$paslon->misi!!}
                         </p>
                         <div class="ratio ratio-16x9">
-                            <iframe width="560" height="315" src="https://www.youtube.com/embed/apjNfkysjbM"
-                                title="YouTube video player" frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen></iframe>
+                            {!!$paslon->frame_ytb!!}
                         </div>
                     </div>
                 </div>

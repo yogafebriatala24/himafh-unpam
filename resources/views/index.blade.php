@@ -34,8 +34,8 @@
                         Selamat datang di website resmi Himpunan Mahasiswa
                         Fakultas Hukum Universitas Pamulang.
                     </h2>
-                    <div data-aos="fade-up" data-aos-delay="800">
-                        <a href="#calon" class="btn-get-started scrollto">Lihat Kandidat</a>
+                    <div data-aos="fade-up" data-aos-delay="500">
+                        <a href="{{ route('login') }}" class="btn-get-started scrollto">Login</a>
                     </div>
                 </div>
                 <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="fade-left" data-aos-delay="200">
@@ -58,35 +58,25 @@
                     @foreach ($paslon as $item)
                         <div class="col-9 col-lg-4 d-flex align-items-stretch">
                             <div class="member" data-aos="fade-up" data-aos-delay="100">
+                                <img src="{{ asset('/storage/' . $item->foto) }}"
+                                                    class="img-fluid" alt="" />
                                 <div class="row">
                                     <div class="col">
-                                        <div class="card">
-                                            <div class="member-img">
-                                                <img src="{{ asset('/storage/' . $item->ketua->image) }}"
-                                                    class="img-fluid" alt="" />
-                                                <div class="member-info">
-                                                    <h4>{{ $item->ketua->user->name }}</h4>
-                                                    <span>Calon Ketua Umum</span>
-                                                </div>
-                                            </div>
+                                        <div class="member-info">
+                                            <h6>{{ $item->ketua->user->name }}</h6>
+                                            <span>Calon Ketua Umum</span>
                                         </div>
                                     </div>
                                     <div class="col">
-                                        <div class="card">
-                                            <div class="member-img">
-                                                <img src="{{ asset('/storage/' . $item->wakil->image) }}"
-                                                    class="img-fluid" alt="" />
-                                                <div class="member-info">
-                                                    <h4>{{ $item->wakil->user->name }}</h4>
-                                                    <span>Calon Wakil Ketua</span>
-                                                </div>
-                                            </div>
+                                        <div class="member-info">
+                                            <h6>{{ $item->wakil->user->name }}</h6>
+                                            <span>Calon Ketua Umum</span>
                                         </div>
                                     </div>
-                                    <div class="d-grid gap-2 mb-2">
-                                        <a href="{{ route('profile') }}" class="btn mx-2 mt-1 py-2">Profil
-                                            Kandidat 0{{ $item->nomor }}</a>
-                                    </div>
+                                </div>
+                                <div class="d-grid gap-2 mb-2">
+                                    <a href="{{ route('profile', $item->id) }}" class="btn mx-2 mt-1 py-2">Profil
+                                        Kandidat 0{{ $item->nomor }}</a>
                                 </div>
 
                             </div>
@@ -97,7 +87,7 @@
             </div>
         </section>
         {{-- Quotes --}}
-        <section id="testimonials" class="testimonials section-bg">
+        <section id="quotes" class="testimonials section-bg">
             <div class="container">
                 <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
                     <div class="swiper-wrapper">
@@ -241,7 +231,7 @@
             </div>
         </section>
         {{-- Pertanyaan --}}
-        <section id="faq" class="faq">
+        <section id="pertanyaan" class="faq">
             <div class="container">
                 <div class="section-title" data-aos="fade-up">
                     <h2>Q & A</h2>
@@ -296,26 +286,7 @@
                     </div>
                     <div class="col-lg-7">
                         <p>
-                            Untuk login silahkan menonton video tutorial dimenu tutorial login.
-                        </p>
-                    </div>
-                </div>
-                <div class="row faq-item d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="500">
-                    <div class="col-lg-5">
-                        <i class="ri-question-line"></i>
-                        <h4>
-                            Tempus quam pellentesque nec nam aliquam sem et
-                            tortor consequat?
-                        </h4>
-                    </div>
-                    <div class="col-lg-7">
-                        <p>
-                            Molestie a iaculis at erat pellentesque
-                            adipiscing commodo. Dignissim suspendisse in est
-                            ante in. Nunc vel risus commodo viverra maecenas
-                            accumsan. Sit amet nisl suscipit adipiscing
-                            bibendum est. Purus gravida quis blandit turpis
-                            cursus in
+                            Untuk login silahkan menonton video tutorial di youtube kami.
                         </p>
                     </div>
                 </div>
@@ -338,6 +309,8 @@
                                         class="bi bi-twitter"></i></a>
                                 <a href="https://instagram.com/himafh_unpam" class="instagram"><i
                                         class="bi bi-instagram"></i></a>
+                                <a href="https://www.youtube.com/channel/UCzTJ2Mnzl1Hc-7KR7u6itcg" class="youtube"><i
+                                    class="bi bi-youtube"></i></a>
                             </div>
                         </div>
                     </div>

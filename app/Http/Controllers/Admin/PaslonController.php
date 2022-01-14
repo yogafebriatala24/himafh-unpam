@@ -46,6 +46,9 @@ class PaslonController extends Controller
     public function store(PaslonRequest $request)
     {
         $data = $request->all();
+        $image = $request->file('foto')->store('image/paslon/', 'public');
+        $data['foto'] = $image;
+
         $paslon = Paslon::create($data);
 
         return redirect()->route('paslon.index')->with('status', 'berhasil tambah pasangan calon');

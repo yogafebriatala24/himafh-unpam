@@ -56,4 +56,8 @@ class User extends Authenticatable
     }
 
     protected $appends = ['password_c'];
+
+    public function suara(){
+        return $this->hasMany('App\Models\Suara');
+    }
 }

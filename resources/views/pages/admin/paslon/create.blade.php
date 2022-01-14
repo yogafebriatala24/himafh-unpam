@@ -19,11 +19,19 @@
             {{ session('status') }}
         </div>
     @endif
-    <form action="{{ route('paslon.store') }}" method="post">
-        @csrf
+    <form action="{{ route('paslon.store') }}" method="post"  enctype="multipart/form-data">
+        {{ csrf_field() }}
         <div class="card">
             <div class="card-body">
-                <div class="row">
+                <div class="row mt-2">
+                    <div class="col-md-6">
+                        <label for="">Masukan Foto</label>
+                        <input type="file" class="form-control" name="foto">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="">Frame Youtube</label>
+                        <input type="text" class="form-control" name="frame_ytb">
+                    </div>
                     <div class="col-12">
                         <label for="">Pasang Nomor Urut</label>
                         <input type="number" class="form-control" name="nomor" value="{{ old('nomor') }}">

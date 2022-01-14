@@ -10,6 +10,7 @@
     <meta content="" name="keywords" />
 
     @include('includes.front.style')
+    @livewireStyles
 </head>
 
 <body>
@@ -18,7 +19,7 @@
         @yield('content')
     </main>
     {{-- Footer --}}
-    <footer id="footer">
+    <footer id="footer" style="margin-top: 500px;">
         <div class="container-fluid">
             <div
                 class="
@@ -36,6 +37,13 @@
     </footer>
 
     <script src="{{ asset('frontend/home/assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    @include('includes.front.script')
+    <x-livewire-alert::scripts />
+    <script src="{{ asset('vendor/livewire-alert/livewire-alert.js') }}"></script>
+    <x-livewire-alert::flash />
+    @stack('script')
 </body>
 
 </html>

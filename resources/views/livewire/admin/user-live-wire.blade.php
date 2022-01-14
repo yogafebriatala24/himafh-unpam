@@ -65,10 +65,10 @@
                                 <label for="">Jumlah Data</label>
                                 <select class="form-select" wire:model="jmlData">
                                     <option value="">Pilih</option>
-                                    <option value="{{ 8 }}">8</option>
-                                    <option value="{{ 16 }}">16</option>
-                                    <option value="{{ 32 }}">32</option>
+                                    <option value="{{ 10 }}">10</option>
+                                    <option value="{{ 50 }}">50</option>
                                     <option value="{{ 100 }}">100</option>
+                                    <option value="{{ 200 }}">200</option>
                                 </select>
                                 <span class="text-primary mt-2" wire:loading wire:target="jmlData">
                                     <div class="spinner-border" role="status">
@@ -128,7 +128,7 @@
                                             <td wire:click="doubleClick({{ $item->id }})">
                                                 {{ $item->reguler }}</td>
                                             <td class="">
-                                                <a href="https://wa.me/62{{ $item->no_tlp }}/?text=Hallo {{ $item->name }}, kami dari tim KPU Hima FH. %0a %0aPassword pemira anda : *{{ $item->password_c }}* %0a %0aJangan sebarkan password ini kepada siapapun!"
+                                                <a href="https://wa.me/62{{ $item->no_tlp }}/?text=Hallo {{ $item->name }}, kami dari tim KPU Hima FH. %0a %0aPassword login untuk vote pemilihan ketua dan wakil ketua umum Hima FH anda : {{ $item->password_c }} %0a %0aJangan sebarkan password ini kepada siapapun! %0a %0aLink Vote: himafahunpam.com %0aLink Tutorial Vote: bit.ly/TutorialEvotingHimaFhUnpam %0aJangan lupa untuk memilih ya:) Ini nim anda {{ $item->username }}"
                                                     class="btn btn-link text-success">
                                                     <i class="bi bi-whatsapp"></i>
                                                 </a>

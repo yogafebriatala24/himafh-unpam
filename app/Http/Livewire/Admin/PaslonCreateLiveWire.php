@@ -6,11 +6,14 @@ use App\Models\Kandidat;
 use App\Models\Paslon;
 use Livewire\Component;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
+use Livewire\WithFileUploads;
 
 class PaslonCreateLiveWire extends Component
 {
+    use WithFileUploads;
     use LivewireAlert;
-    public $nomor, $idKetua, $idWakil, $visi, $misi;
+
+    public $nomor, $idKetua, $idWakil, $visi, $misi, $frame_ytb, $foto;
     public function render()
     {
         $kandidatKetuas = Kandidat::where('role', 'Ketua')->with('user')->get();
