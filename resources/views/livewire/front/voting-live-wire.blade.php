@@ -12,11 +12,11 @@
     @else
     <div class="row justify-content-center">
         @foreach ($paslons as $item)
-        <div class="col-12 col-lg-4 d-flex align-items-stretch">
+        <div class="col-12 col-lg-4 d-flex align-items-stretch mt-2">
             <div class="member" data-aos="fade-up" data-aos-delay="100">
                 <img src="{{ asset('/storage/' . $item->foto) }}"
                                     class="img-fluid" alt="" />
-                <div class="row">
+                <div class="row text-center">
                     <div class="col">
                         <div class="member-info">
                             <h6 class="mt-2" style="font-weight: bold">{{ $item->ketua->user->name }}</h6>
