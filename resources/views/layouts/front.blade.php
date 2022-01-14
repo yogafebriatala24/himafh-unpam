@@ -24,7 +24,7 @@
 
 <body>
     @include('includes.front.navbar')
-    <main id="main" style="">
+    <main id="main" style="margin-top: 100px;">
         @yield('content')
     </main>
     {{-- Footer --}}
