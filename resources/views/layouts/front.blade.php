@@ -15,8 +15,8 @@
     <meta property="og:description" content="Himpunan Mahasiswa Fakultas Hukum Universitas Pamulang 2022" />
     <Meta Content='Himpunan Mahasiswa Hukum Universitas Pamulang' Name='description'/>
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://himafhunpam.com/images/logo.png">
-    <meta property="og:image" itemprop="image" content="https://himafhunpam.com/images/logo.png">
+    <meta property="og:image" content="https://himafhunpam.com/logo_hima.jpg">
+    <meta property="og:image" itemprop="image" content="https://himafhunpam.com/logo_hima.jpg">
 
     @include('includes.front.style')
     @livewireStyles

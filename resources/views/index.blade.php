@@ -13,8 +13,8 @@
     <meta property="og:image:width" content="300">
     <meta property="og:image:height" content="300">
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://himafhunpam.com/images/logo.png">
-    <meta property="og:image" itemprop="image" content="https://himafhunpam.com/images/logo.png">
+    <meta property="og:image" content="https://himafhunpam.com/logo_hima.jpg">
+    <meta property="og:image" itemprop="image" content="https://himafhunpam.com/logo_hima.jpg">
     <meta property="og:updated_time" content="1440432930" />
     <title>Hima FH Unpam</title>
     <meta content="" name="description" />
@@ -24,8 +24,8 @@
 </head>
 
 <body>
-    <link itemprop="thumbnailUrl" href="url_gambar"> <span itemprop="thumbnail" itemscope itemtype="https://himafhunpam.com/images/logo.png"> 
-    <link itemprop="url" href="https://himafhunpam.com/images/logo.png"> </span>
+    <link itemprop="thumbnailUrl" href="url_gambar"> <span itemprop="thumbnail" itemscope itemtype="https://himafhunpam.com/logo_hima.jpg"> 
+    <link itemprop="url" href="https://himafhunpam.com/logo_hima.jpg"> </span>
     @include('includes.front.navbar')
     <section id="hero" class="d-flex align-items-center mt-5">
         <div class="container">

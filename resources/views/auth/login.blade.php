@@ -16,8 +16,8 @@
     <!-- Size of image. Any size up to 300. Anything above 300px will not work in WhatsApp -->
     <meta property="og:image:width" content="300">
     <meta property="og:image:height" content="300">
-    <meta property="og:image" content="https://himafhunpam.com/images/logo.png">
-    <meta property="og:image" itemprop="image" content="https://himafhunpam.com/images/logo.png">
+    <meta property="og:image" content="https://himafhunpam.com/logo_hima.jpg">
+    <meta property="og:image" itemprop="image" content="https://himafhunpam.com/logo_hima.jpg">
     <meta property="og:updated_time" content="1440432930" />
     <title>Login HIMA FH</title>
     <!-- Favicons -->
@@ -30,8 +30,8 @@
 </head>
 
 <body>
-    <link itemprop="thumbnailUrl" href="url_gambar"> <span itemprop="thumbnail" itemscope itemtype="https://himafhunpam.com/images/logo.png"> 
-        <link itemprop="url" href="https://himafhunpam.com/images/logo.png"> </span>
+    <link itemprop="thumbnailUrl" href="url_gambar"> <span itemprop="thumbnail" itemscope itemtype="https://himafhunpam.com/logo_hima.jpg"> 
+        <link itemprop="url" href="https://himafhunpam.com/logo_hima.jpg"> </span>
     <div class="content">
         <div class="container">
             <div class="row">
