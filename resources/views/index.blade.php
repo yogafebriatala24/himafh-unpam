@@ -15,6 +15,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:image" content="https://himafhunpam.com/images/logo.png">
     <meta property="og:image" itemprop="image" content="https://himafhunpam.com/images/logo.png">
+    <meta property="og:updated_time" content="1440432930" />
     <title>Hima FH Unpam</title>
     <meta content="" name="description" />
     <meta content="" name="keywords" />

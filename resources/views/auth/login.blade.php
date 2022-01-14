@@ -18,6 +18,7 @@
     <meta property="og:image:height" content="300">
     <meta property="og:image" content="https://himafhunpam.com/images/logo.png">
     <meta property="og:image" itemprop="image" content="https://himafhunpam.com/images/logo.png">
+    <meta property="og:updated_time" content="1440432930" />
     <title>Login HIMA FH</title>
     <!-- Favicons -->
     <link href="{{ asset('NiceAdmin/assets/img/favicon.png') }}" rel="icon" />
