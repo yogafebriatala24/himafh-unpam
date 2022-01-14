@@ -71,7 +71,7 @@
                                         </span>
                                     @enderror
                                 </div>
-                                <button type="submit" class="btn btn-primary btn-block">
+                                <button type="submit" class="btn btn-danger btn-block">
                                     {{ __('Login') }}
                                 </button>
                             </form>
