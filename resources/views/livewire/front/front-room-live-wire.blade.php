@@ -1,4 +1,4 @@
-<div>
+<div class="container">
     @section('title')
         Room Pemilihan
     @endsection
