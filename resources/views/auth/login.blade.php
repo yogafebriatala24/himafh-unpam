@@ -32,7 +32,7 @@
 <body>
     <link itemprop="thumbnailUrl" href="url_gambar"> <span itemprop="thumbnail" itemscope itemtype="https://himafhunpam.com/logo_hima.jpg"> 
         <link itemprop="url" href="https://himafhunpam.com/logo_hima.jpg"> </span>
-    <div class="content">
+    <div class="content" style="padding-top: 20px !important;">
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
