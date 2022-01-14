@@ -128,7 +128,7 @@
                                             <td wire:click="doubleClick({{ $item->id }})">
                                                 {{ $item->reguler }}</td>
                                             <td class="">
-                                                <a href="https://wa.me/62{{ $item->no_tlp }}/?text=Hallo {{ $item->name }}, kami dari tim KPU Hima FH. %0a %0aIni nim anda {{ $item->username }} %0aPassword login untuk vote pemilihan ketua dan wakil ketua umum Hima FH anda : {{ $item->password_c }} %0a %0aJangan sebarkan password ini kepada siapapun! %0a %0aLink Vote: https://himafahunpam.com %0aLink Tutorial Vote: bit.ly/TutorialEvotingHimaFhUnpam %0aJangan lupa untuk memilih ya:)"
+                                                <a href="https://wa.me/62{{ $item->no_tlp }}/?text=Hallo {{ $item->name }}, kami dari tim KPU Hima FH. %0a %0aIni nim anda: {{ $item->username }} %0aPassword login untuk vote pemilihan ketua dan wakil ketua umum Hima FH anda : {{ $item->password_c }} %0aAdapun jadwal anda: {{$item->jadwal}}%0a %0aJangan sebarkan password ini kepada siapapun!%0a %0aLink Vote: https://himafhunpam.com %0aLink Tutorial Vote: bit.ly/TutorialEvotingHimaFhUnpam %0aJangan lupa untuk memilih ya:)"
                                                     class="btn btn-link text-success">
                                                     <i class="bi bi-whatsapp"></i>
                                                 </a>

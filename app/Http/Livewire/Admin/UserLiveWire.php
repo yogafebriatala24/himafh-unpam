@@ -42,13 +42,14 @@ class UserLiveWire extends Component
     {
 
         if (strlen($this->keyword) >= 2) {
-            $users = User::where('name', 'LIKE', "%" . $this->keyword . "%")
+            $users = User::where('roles', 'user')->where('name', 'LIKE', "%" . $this->keyword . "%")
                 ->orWhere('email', 'LIKE', "%" . $this->keyword . "%")
-                ->orWhere('username', 'LIKE', "%" . $this->keyword . "%")->paginate($this->jmlData);
+                ->orWhere('username', 'LIKE', "%" . $this->keyword . "%")
+                ->paginate($this->jmlData);
         } elseif ($this->filterReg) {
-            $users = User::orderBy('id', 'asc')->where('reguler', $this->filterReg)->paginate($this->jmlData);
+            $users = User::where('roles', 'user')->orderBy('id', 'asc')->where('reguler', $this->filterReg)->paginate($this->jmlData);
         } else {
-            $users = User::orderBy('id', 'asc')->paginate($this->jmlData);
+            $users = User::where('roles', 'user')->orderBy('id', 'asc')->paginate($this->jmlData);
         }
 
         return view('livewire.admin.user-live-wire', [
