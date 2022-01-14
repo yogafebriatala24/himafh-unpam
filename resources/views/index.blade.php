@@ -4,7 +4,12 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-
+    <meta property="og:site_name" content="https://himafhunpam.com/">
+    <meta property="og:title" content="Himpunan Mahasiswa Fakultas Hukum Universitas Pamulang 2022s" />
+    <meta property="og:description" content="Himpunan Mahasiswa Fakultas Hukum Universitas Pamulang 2022" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://himafhunpam.com/images/logo.png">
+    <meta property="og:image" itemprop="image" content="https://himafhunpam.com/images/logo.png">
     <title>Hima FH Unpam</title>
     <meta content="" name="description" />
     <meta content="" name="keywords" />
