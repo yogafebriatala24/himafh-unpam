@@ -4,7 +4,7 @@
             <div class="col-8">
                 <div class="card">
                     <div class="card-body text-center">
-                        <h3>Anda Sudah Memilih</h3>
+                        <h3>Terima Kasih, Anda Sudah Memilih</h3>
                     </div>
                 </div>
             </div>
