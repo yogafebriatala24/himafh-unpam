@@ -76,14 +76,14 @@
                                 <div class="row">
                                     <div class="col">
                                         <div class="member-info">
-                                            <h6>{{ $item->ketua->user->name }}</h6>
-                                            <span>Calon Ketua Umum</span>
+                                            <h6 style="font-size: 14px">{{ $item->ketua->user->name }}</h6>
+                                            <p style="font-size: 12px">Calon Ketua Umum</p>
                                         </div>
                                     </div>
                                     <div class="col">
                                         <div class="member-info">
-                                            <h6>{{ $item->wakil->user->name }}</h6>
-                                            <span>Calon Ketua Umum</span>
+                                            <h6 style="font-size: 14px">{{ $item->wakil->user->name }}</h6>
+                                            <p style="font-size: 12px">Calon Ketua Umum</p>
                                         </div>
                                     </div>
                                 </div>

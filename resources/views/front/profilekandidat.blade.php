@@ -7,7 +7,7 @@
 @section('content')
     <section class="section profile container">
         <div class="row">
-            <div class="col-xl-4 mt-5">
+            <div class="col-xl-4 mt-1">
                 <div class="row">
                     <div class="col-xl-12">
                         <div class="card">
