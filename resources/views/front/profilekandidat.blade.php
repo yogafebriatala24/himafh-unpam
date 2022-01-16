@@ -7,7 +7,7 @@
 @section('content')
     <section class="section profile container">
         <div class="row">
-            <div class="col-xl-4 mt-1">
+            <div class="col-xl-4">
                 <div class="row">
                     <div class="col-xl-12">
                         <div class="card">
@@ -52,7 +52,7 @@
                 </div>
             </div>
 
-            <div class="col-xl-8 pt-5">
+            <div class="col-xl-8">
                 <div class="card">
                     <div class="card-body pt-5">
                         <h5 class="card-title">Visi</h5>
