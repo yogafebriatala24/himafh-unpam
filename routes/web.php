@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
+use Spatie\Analytics\Period;
 
 /*
 |--------------------------------------------------------------------------
@@ -75,9 +76,13 @@ Route::get('duplikat', function () {
     return response()->json($data);
 });
 
-// cek yg belum milih
 Route::get('secret', function(){
     $user = User::with('suara')->get();
 
     return response()->json([$user]);
 })->middleware('auth', 'admin');
+
+Route::get('analisis', function(){
+    $data = Analytics::fetchMostVisitedPages(Period::days(7));
+    dd($data);
+});

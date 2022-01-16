@@ -46,7 +46,15 @@
     </footer>
 
     <script src="{{ asset('frontend/home/assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-217270429-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-217270429-1');
+    </script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     @include('includes.front.script')
     <x-livewire-alert::scripts />
