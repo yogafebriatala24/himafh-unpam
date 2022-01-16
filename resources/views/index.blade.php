@@ -83,7 +83,7 @@
                                     <div class="col">
                                         <div class="member-info">
                                             <h6 style="font-size: 14px">{{ $item->wakil->user->name }}</h6>
-                                            <p style="font-size: 12px">Calon Ketua Umum</p>
+                                            <p style="font-size: 12px">Calon Wakil Ketua Umum</p>
                                         </div>
                                     </div>
                                 </div>
