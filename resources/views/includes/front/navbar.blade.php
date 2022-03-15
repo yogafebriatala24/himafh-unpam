@@ -17,6 +17,10 @@
                     <a class="nav-link scrollto {{ request()->is('/') ? 'active' : '' }}"
                         href="{{ route('depan') }}">Home</a>
                 </li>
+                <li>
+                    <a class="nav-link scrollto {{ request()->is('/') ? 'active' : '' }}"
+                        href="#">Tulisan</a>
+                </li>
 
                 <li>
                     <a class="nav-link scrollto {{ request()->is('room') ? 'active' : '' }}"
