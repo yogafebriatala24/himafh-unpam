@@ -18,11 +18,11 @@ class UserSeeder extends Seeder
     public function run()
     {
         User::create([
-            'name' => 'Admin Hima FH 4',
-            'email' => 'lawtech42022@gmail.com',
-            'password' => Hash::make('*Adminnnn4.20222023*'),
-            'passwordtwo' => Crypt::encryptString('*Adminnnn4.20222023*'),
-            'username' => 'adminpemira4222022',
+            'name' => 'Admin Hima FH',
+            'email' => 'lawtech@gmail.com',
+            'password' => Hash::make('1234'),
+            'passwordtwo' => Crypt::encryptString('1234'),
+            'username' => 'admin',
             'no_tlp' => '001',
             'kelas' => '001',
             'reguler' => 'Z',
