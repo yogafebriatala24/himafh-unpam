@@ -22,8 +22,12 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'username', 'no_tlp',
-        'kelas', 'reguler', 'roles', 'passwordtwo'
+        'username', 
+        'no_tlp',
+        'kelas', 
+        'reguler', 
+        'roles', 
+        'passwordtwo'
     ];
 
     /**
@@ -57,11 +61,11 @@ class User extends Authenticatable
     public function getJadwalAttribute()
     {
        if($this->reguler === 'A'){
-           return "Senin, 17 Januari 2022. Pukul 08.00 - 15.00 WIB";
+           return "Rabu, 18 Januari 2023. Pukul 08.00 - 15.00 WIB";
        }elseif($this->reguler === 'B'){
-        return "Selasa, 18 Januari 2022. Pukul 08.00 - 15.00 WIB";
+        return "Kamis, 19 Januari 2023. Pukul 08.00 - 15.00 WIB";
        }else{
-        return "Rabu, 19 Januari 2022. Pukul 08.00 - 15.00 WIB";
+        return "Jum'at, 20 Januari 2022. Pukul 08.00 - 15.00 WIB";
        }
     }
 

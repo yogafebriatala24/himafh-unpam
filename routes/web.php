@@ -44,6 +44,8 @@ Route::get('/dashboard', DashboardLiveWire::class)->name('dashboard-admin')->mid
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/berita', [App\Http\Controllers\BeritaController::class, 'index'])->name('berita');
+Route::get('/dokumen', [App\Http\Controllers\DokumenController::class, 'index'])->name('dokumen');
 
 // admin
 Route::get('dashboard/users', UserLiveWire::class)->name('livewire-user')->middleware('auth');

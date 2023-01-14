@@ -19,10 +19,10 @@ class UserSeeder extends Seeder
     {
         User::create([
             'name' => 'Admin Hima FH',
-            'email' => 'lawtech@gmail.com',
-            'password' => Hash::make('1234'),
-            'passwordtwo' => Crypt::encryptString('1234'),
-            'username' => 'admin',
+            'email' => 'lawtech2@gmail.com',
+            'password' => Hash::make('12345'),
+            'passwordtwo' => Crypt::encryptString('12345'),
+            'username' => 'admin2',
             'no_tlp' => '001',
             'kelas' => '001',
             'reguler' => 'Z',

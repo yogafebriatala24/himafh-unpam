@@ -40,12 +40,11 @@
                             justify-content-center
                         ">
                     <h1 data-aos="fade-up">
-                        Sistem Informasi E-Voting Pemilihan Raya Himpunan
-                        Mahasiswa Fakultas Hukum Universitas Pamulang
+                         Selamat datang di website resmi Himpunan Mahasiswa
+                        Fakultas Hukum Universitas Pamulang.
                     </h1>
                     <h2 data-aos="fade-up" data-aos-delay="400">
-                        Selamat datang di website resmi Himpunan Mahasiswa
-                        Fakultas Hukum Universitas Pamulang.
+                        Periode 2022-2023
                     </h2>
                     <div data-aos="fade-up" data-aos-delay="500">
                         <a href="{{ route('login') }}" class="btn-get-started scrollto">Login</a>
@@ -59,8 +58,9 @@
     </section>
     {{-- Konten --}}
     <main id="main">
+        
         {{-- Calon --}}
-        <section id="calon" class="team section-bg">
+        {{-- <section id="calon" class="team section-bg">
             <div class="container">
                 <div class="section-title" data-aos="fade-up">
                     <h2>Kandidat</h2>
@@ -98,7 +98,7 @@
 
                 </div>
             </div>
-        </section>
+        </section> --}}
         {{-- Quotes --}}
         <section id="quotes" class="testimonials section-bg">
             <div class="container">

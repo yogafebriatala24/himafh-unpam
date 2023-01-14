@@ -18,14 +18,22 @@
                         href="{{ route('depan') }}">Home</a>
                 </li>
                 <li>
-                    <a class="nav-link scrollto {{ request()->is('/') ? 'active' : '' }}"
-                        href="#">Tulisan</a>
+                    <a class="nav-link scrollto {{ request()->is('dokumen') ? 'active' : '' }}"
+                        href="{{ route ('dokumen') }}">Dokumen</a>
+                </li>
+                <li>
+                    <a class="nav-link scrollto {{ request()->is('berita') ? 'active' : '' }}"
+                        href="{{ route('berita') }}">Berita</a>
+                </li>
+                <li>
+                    <a class="nav-link scrollto"
+                        href="#">Tentang Kami</a>
                 </li>
 
-                <li>
-                    <a class="nav-link scrollto {{ request()->is('room') ? 'active' : '' }}"
-                        href="{{ route('front-room') }}"> Room</a>
-                </li>
+                    {{-- <li>
+                        <a class="nav-link scrollto {{ request()->is('room') ? 'active' : '' }}"
+                            href="{{ route('front-room') }}"> Room</a>
+                    </li> --}}
                 @guest
                     <li>
                         <a class="getstarted scrollto" href="{{ route('login') }}">Login</a>
